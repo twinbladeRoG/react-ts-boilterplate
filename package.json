@@ -2,7 +2,19 @@
   "name": "react-ts-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "BROWSER=none craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
+    "@craco/craco": "^6.1.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@hookform/resolvers": "^2.4.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,23 +22,33 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "classnames": "^2.3.1",
+    "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.3.6",
+    "react-query": "^3.15.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.0",
+    "react-table": "^7.7.0",
+    "react-toastify": "^7.0.4",
     "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "uuid": "^8.3.2",
+    "web-vitals": "^1.0.1",
+    "whatwg-fetch": "^3.6.2",
+    "yup": "^0.32.9"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "autoprefixer": "^9",
+    "node-sass": "^5.0.0",
+    "patch-package": "^6.4.7",
+    "postcss": "^7",
+    "postinstall-postinstall": "^2.1.0",
+    "prettier": "^2.2.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "browserslist": {
     "production": [
