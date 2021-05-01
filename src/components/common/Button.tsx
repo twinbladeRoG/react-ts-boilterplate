@@ -1,10 +1,10 @@
 /* eslint-disable react/button-has-type */
-import * as React from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  isLoading: boolean;
-  color: string;
+  isLoading?: boolean;
+  color?: string;
 }
 
 const Button = ({ color, isLoading, className, disabled, children, ...props }: ButtonProps) => {

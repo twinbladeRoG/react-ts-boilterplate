@@ -1,7 +1,7 @@
-import { ToastContainer } from "react-toastify";
-import NavBar from "./components/NavBar";
-import "./index.scss";
-import Routes from "./Routes";
+import { ToastContainer } from 'react-toastify';
+import NavBar from './components/NavBar';
+import './index.scss';
+import Routes from './Routes';
 
 const App = () => (
   <>
