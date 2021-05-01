@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
-  color?: string;
+  color: string;
 }
 
 const Button = ({ color, isLoading, className, disabled, children, ...props }: ButtonProps) => {
