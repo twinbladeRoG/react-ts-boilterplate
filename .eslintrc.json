@@ -3,14 +3,15 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["react-app", "react-app/jest", "airbnb", "prettier"],
+  "extends": ["react-app", "react-app/jest", "airbnb", "prettier", "airbnb-typescript"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "settings": {

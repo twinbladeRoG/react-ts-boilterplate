@@ -1,14 +1,18 @@
 import * as React from 'react';
 import Button from '../components/common/Button';
+import Modal from '../components/common/Modal/Modal';
 
 const Home = () => {
-  const [isLoading, setLoading] = React.useState(false);
+  const [isLoading, setLoading] = React.useState<boolean>(false);
 
   const handleClick = () => {
     setLoading(true);
 
     setTimeout(() => setLoading(false), 3000);
   };
+
+  const [showModal, setShowModal] = React.useState<boolean>(true);
+  const toggleModal = () => setShowModal(!showModal);
 
   return (
     <>
@@ -34,7 +38,10 @@ const Home = () => {
           <h3 className="font-semibold text-blue-700 text-xl">Components</h3>
           <hr className="mb-5" />
 
-          <div className="flex items-center space-x-3">
+          <h4 className="font-semibold text-blue-700 text-lg">Button</h4>
+          <hr className="mb-5" />
+
+          <div className="flex items-center space-x-3 mb-5">
             <Button onClick={handleClick} isLoading={isLoading} color="red-400">
               Button
             </Button>
@@ -45,6 +52,24 @@ const Home = () => {
 
             <Button color="green-900">Button</Button>
           </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Modal</h4>
+          <hr className="mb-5" />
+          <Button color="green-900" onClick={toggleModal}>
+            Open Modal
+          </Button>
+
+          <Modal show={showModal} onClose={toggleModal}>
+            <Modal.Header closeButton>HEADER 1</Modal.Header>
+            <Modal.Body>BODY</Modal.Body>
+            <Modal.Footer>
+              <Button color="red-400" className="mr-5" onClick={toggleModal}>
+                Close
+              </Button>
+
+              <Button color="green-400">Submit</Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </section>
     </>
