@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.modal-content {
-  outline: none;
+.modal-overlay {
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, .4);
 }
-
+.modal-dailog.centered {
+  pointer-events: none;
+  min-height: calc(100% - 3.5rem);
+}
+.modal-dailog.centered .modal-content {
+  pointer-events: all;
+}

@@ -7,7 +7,7 @@ export interface ModalBodyProps {
 }
 
 const ModalBody = ({ children, className }: ModalBodyProps) => (
-  <div className={classNames(className, 'bg-white p-5')}>{children}</div>
+  <div className={classNames(className, 'modal-body bg-white p-5')}>{children}</div>
 );
 
 export default ModalBody;

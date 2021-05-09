@@ -23,15 +23,24 @@ const Modal = ({ show, centered, children, onClose }: ModalProps) => {
   return (
     <ModalContext.Provider value={{ onClose: handleClose }}>
       <ReactModal
+        ariaHideApp={false}
         isOpen={show}
         onRequestClose={onClose}
+        overlayClassName={classNames('modal-overlay', 'fixed w-full h-full overflow-y-auto')}
         className={classNames(
-          'modal-content',
-          centered && 'centered',
-          'w-auto border-0 my-7 mx-auto max-w-none sm:max-w-screen-lg',
+          'modal-dailog relative mx-auto my-7',
+          'w-auto max-w-none sm:max-w-screen-lg',
+          'border-0 outline-none',
+          centered && 'centered flex items-center',
         )}
       >
-        {children}
+        <div
+          className={classNames(
+            'modal-content border-0 outline-none relative flex flex-col w-full h-full',
+          )}
+        >
+          {children}
+        </div>
       </ReactModal>
     </ModalContext.Provider>
   );

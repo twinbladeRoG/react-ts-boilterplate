@@ -11,8 +11,10 @@ const Home = () => {
     setTimeout(() => setLoading(false), 3000);
   };
 
-  const [showModal, setShowModal] = React.useState<boolean>(true);
+  const [showModal, setShowModal] = React.useState(false);
   const toggleModal = () => setShowModal(!showModal);
+  const [modal, setModal] = React.useState(false);
+  const toggleInnerModal = () => setModal(!modal);
 
   return (
     <>
@@ -41,7 +43,7 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Button</h4>
           <hr className="mb-5" />
 
-          <div className="flex items-center space-x-3 mb-5">
+          <div className="flex flex-wrap items-center space-x-3 mb-5">
             <Button onClick={handleClick} isLoading={isLoading} color="red-400">
               Button
             </Button>
@@ -60,14 +62,127 @@ const Home = () => {
           </Button>
 
           <Modal show={showModal} onClose={toggleModal}>
-            <Modal.Header closeButton>HEADER 1</Modal.Header>
-            <Modal.Body>BODY</Modal.Body>
+            <Modal.Header closeButton>Modal Header</Modal.Header>
+            <Modal.Body>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eius eum
+                voluptatum corporis, necessitatibus temporibus distinctio odio iste accusantium
+                optio veritatis amet consequatur nam ullam? Ratione vero corrupti nemo, at beatae
+                earum, accusamus dolor veritatis assumenda illo molestiae laudantium. Alias fugit ea
+                animi ratione, id unde? Quidem laborum perspiciatis sit sapiente amet quia. Possimus
+                ut reprehenderit tempora itaque, eum ducimus.
+              </p>
+            </Modal.Body>
             <Modal.Footer>
               <Button color="red-400" className="mr-5" onClick={toggleModal}>
                 Close
               </Button>
 
-              <Button color="green-400">Submit</Button>
+              <Button color="green-400" onClick={toggleInnerModal}>
+                Submit
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          <Modal show={modal} onClose={toggleInnerModal} centered>
+            <Modal.Header>Inner Modal</Modal.Header>
+            <Modal.Body>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis laborum
+              consectetur exercitationem reiciendis accusantium velit cupiditate quibusdam molestiae
+              quos.
+            </Modal.Body>
+            <Modal.Footer>
+              <Button color="red-400" onClick={toggleInnerModal}>
+                Close
+              </Button>
             </Modal.Footer>
           </Modal>
         </div>

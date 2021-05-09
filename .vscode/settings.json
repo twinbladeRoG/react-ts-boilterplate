@@ -1,0 +1,10 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "files.exclude": {
+    "**/build": true
+  },
+  "css.validate": false,
+  "scss.validate": false
+}

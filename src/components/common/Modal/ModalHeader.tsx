@@ -21,15 +21,15 @@ const ModalHeader = ({ closeButton, children, className }: ModalHeaderProps) => 
     <div
       className={classNames(
         className,
-        'modal-header',
-        'bg-white p-5',
+        'modal-header text-xl font-medium',
+        'flex bg-white p-5',
         'rounded-t-2xl border-b border-gray-200',
       )}
     >
       {children}
 
       {closeButton && (
-        <button type="button" onClick={handleClose}>
+        <button type="button" onClick={handleClose} className="ml-auto">
           <FontAwesomeIcon icon={faTimes} />
         </button>
       )}
