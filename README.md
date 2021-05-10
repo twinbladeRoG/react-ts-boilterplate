@@ -3,7 +3,7 @@
  - [x] React 17
  - [x] ESLint Setup
  - [x] Tailwind CSS Setup
- - [ ] TypeScript Integration
+ - [x] TypeScript Integration
  - [ ] Husky Integration
  - [ ] Stylelint Setup
  - [ ] Tailwind CSS Components
@@ -13,7 +13,7 @@
  - [ ] E2E Testing
  - [ ] Unit Testing
 
-### Documentation
+## Documentation
 
  - [React Modal](http://reactcommunity.org/react-modal/)
  - [React Popper](https://popper.js.org/react-popper/)
@@ -21,3 +21,21 @@
  - [Tailwind CSS](https://tailwindcss.com/docs)
  - [React Hook Form](https://react-hook-form.com/get-started)
  - [React Table](https://react-table.tanstack.com/docs/overview)
+
+## React Components
+ - [ ] Accordian
+ - [ ] Badge
+ - [ ] Breadcrumb
+ - [x] Buttons
+ - [x] Cards
+ - [ ] Carousel
+ - [ ] Dropdowns
+ - [ ] Forms
+ - [ ] InputGroup
+ - [x] Modals
+ - [ ] Navbar
+ - [ ] Overlays & Popovers
+ - [ ] Pagination
+ - [ ] Spinners
+ - [ ] Tabs
+ - [ ] Tooltips
