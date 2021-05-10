@@ -14,3 +14,8 @@
 .modal-dailog.centered .modal-content {
   pointer-events: all;
 }
+
+.modal-dialog-scrollable .modal-body {
+  height: calc(100vh - 13rem);
+  overflow-y: auto;
+}

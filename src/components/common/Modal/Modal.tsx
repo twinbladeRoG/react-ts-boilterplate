@@ -11,11 +11,26 @@ export interface ModalProps {
   onClose?(): void;
   centered?: boolean;
   children: React.ReactNode;
+  scrollable?: boolean;
+  disbaledBackdropPress?: boolean;
 }
 
-const Modal = ({ show, centered, children, onClose }: ModalProps) => {
+const Modal = ({
+  show,
+  centered,
+  children,
+  onClose,
+  scrollable,
+  disbaledBackdropPress,
+}: ModalProps) => {
   const handleClose = () => {
     if (onClose !== undefined) {
+      onClose();
+    }
+  };
+
+  const handleRequestClose = () => {
+    if (!disbaledBackdropPress && onClose !== undefined) {
       onClose();
     }
   };
@@ -25,13 +40,14 @@ const Modal = ({ show, centered, children, onClose }: ModalProps) => {
       <ReactModal
         ariaHideApp={false}
         isOpen={show}
-        onRequestClose={onClose}
+        onRequestClose={handleRequestClose}
         overlayClassName={classNames('modal-overlay', 'fixed w-full h-full overflow-y-auto')}
         className={classNames(
           'modal-dailog relative mx-auto my-7',
           'w-auto max-w-none sm:max-w-screen-lg',
           'border-0 outline-none',
           centered && 'centered flex items-center',
+          scrollable && 'modal-dialog-scrollable ',
         )}
       >
         <div
@@ -50,6 +66,8 @@ Modal.defaultProps = {
   show: false,
   onClose: () => {},
   centered: false,
+  scrollable: false,
+  disbaledBackdropPress: false,
 };
 
 Modal.Header = ModalHeader;

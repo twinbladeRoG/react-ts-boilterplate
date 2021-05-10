@@ -61,7 +61,7 @@ const Home = () => {
             Open Modal
           </Button>
 
-          <Modal show={showModal} onClose={toggleModal}>
+          <Modal show={showModal} onClose={toggleModal} scrollable>
             <Modal.Header closeButton>Modal Header</Modal.Header>
             <Modal.Body>
               <p>
@@ -172,7 +172,7 @@ const Home = () => {
             </Modal.Footer>
           </Modal>
 
-          <Modal show={modal} onClose={toggleInnerModal} centered>
+          <Modal show={modal} onClose={toggleInnerModal} centered disbaledBackdropPress>
             <Modal.Header>Inner Modal</Modal.Header>
             <Modal.Body>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis laborum
