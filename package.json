@@ -9,7 +9,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "lint:fix": "eslint / --fix",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@craco/craco": "^6.1.2",
@@ -67,7 +68,8 @@
     "postcss": "^7",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "husky": "^6.0.0"
   },
   "browserslist": {
     "production": [
