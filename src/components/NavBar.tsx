@@ -1,4 +1,4 @@
-const NavBar = () => (
+const NavBar: React.FC = () => (
   <nav className="bg-blue-600 px-5 py-3 shadow-2xl text-white flex">
     <a href="/" className="font-semibold">
       NAVBAR

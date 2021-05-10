@@ -7,7 +7,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
 }
 
-const Button = ({ color, isLoading, className, disabled, children, ...props }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+  color,
+  isLoading,
+  className,
+  disabled,
+  children,
+  ...props
+}) => {
   const getActiveColor = React.useCallback(() => {
     const colorStrength: string = String(String(color).split('-').pop());
 

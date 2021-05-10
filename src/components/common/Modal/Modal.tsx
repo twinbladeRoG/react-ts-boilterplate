@@ -6,23 +6,26 @@ import ModalContext from './ModalContext';
 import ModalFooter from './ModalFooter';
 import ModalHeader from './ModalHeader';
 
-export interface ModalProps {
+type ModalProps = React.FC<{
   show: boolean;
   onClose?(): void;
   centered?: boolean;
-  children: React.ReactNode;
   scrollable?: boolean;
   disbaledBackdropPress?: boolean;
-}
+}> & {
+  Body: typeof ModalBody;
+  Header: typeof ModalHeader;
+  Footer: typeof ModalFooter;
+};
 
-const Modal = ({
+const Modal: ModalProps = ({
   show,
   centered,
   children,
   onClose,
   scrollable,
   disbaledBackdropPress,
-}: ModalProps) => {
+}) => {
   const handleClose = () => {
     if (onClose !== undefined) {
       onClose();
@@ -62,6 +65,7 @@ const Modal = ({
   );
 };
 
+Modal.displayName = 'Modal';
 Modal.defaultProps = {
   show: false,
   onClose: () => {},
