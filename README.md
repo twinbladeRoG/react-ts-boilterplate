@@ -4,7 +4,7 @@
  - [x] ESLint Setup
  - [x] Tailwind CSS Setup
  - [x] TypeScript Integration
- - [ ] Husky Integration
+ - [x] Husky Integration
  - [ ] Stylelint Setup
  - [ ] Tailwind CSS Components
  - [ ] React Query + Fetch API
