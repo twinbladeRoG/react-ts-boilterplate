@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Accordian from '../components/common/Accordian/Accordian';
 import Button from '../components/common/Button';
 import Modal from '../components/common/Modal/Modal';
 
@@ -57,7 +58,8 @@ const Home = () => {
 
           <h4 className="font-semibold text-blue-700 text-lg">Modal</h4>
           <hr className="mb-5" />
-          <Button color="green-900" onClick={toggleModal}>
+
+          <Button color="green-900 mb-9" onClick={toggleModal}>
             Open Modal
           </Button>
 
@@ -185,6 +187,16 @@ const Home = () => {
               </Button>
             </Modal.Footer>
           </Modal>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Accordian</h4>
+          <hr className="mb-5" />
+
+          <Accordian defaultKey="1">
+            <Accordian.Toggle eventKey="0">Click 1</Accordian.Toggle>
+            <Accordian.Collapse eventKey="0">Accordian 1</Accordian.Collapse>
+            <Accordian.Toggle eventKey="1">Click 2</Accordian.Toggle>
+            <Accordian.Collapse eventKey="1">Accordian 2</Accordian.Collapse>
+          </Accordian>
         </div>
       </section>
     </>
