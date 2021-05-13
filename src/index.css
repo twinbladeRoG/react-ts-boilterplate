@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 .modal-overlay {
-  top: 0px;
-  left: 0px;
-  background-color: rgba(0, 0, 0, .4);
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-dailog.centered {
   pointer-events: none;
   min-height: calc(100% - 3.5rem);
 }
+
 .modal-dailog.centered .modal-content {
   pointer-events: all;
 }

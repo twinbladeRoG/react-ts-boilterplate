@@ -9,6 +9,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./",
     "lint:fix": "eslint / --fix",
+    "lint:css": "stylelint \"**/*.css\"",
     "postinstall": "patch-package",
     "prepare": "husky install"
   },
@@ -65,11 +66,12 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
-    "node-sass": "^5.0.0",
     "patch-package": "^6.4.7",
     "postcss": "^7",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "browserslist": {

@@ -1,5 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# Check for ESlint errors in Javascript and Typescript files
 yarn lint
+
+# Check for Stylelint errors in CSS files
+yarn lint:css
+
+# Add change before commiting
 git add .

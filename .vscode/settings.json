@@ -6,5 +6,9 @@
     "**/build": true
   },
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "less.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  }
 }
