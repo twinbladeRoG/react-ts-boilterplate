@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+button {
+  @apply focus:outline-none;
+}
+
 .modal-overlay {
   top: 0;
   left: 0;
@@ -20,4 +24,8 @@
 .modal-dialog-scrollable .modal-body {
   height: calc(100vh - 13rem);
   overflow-y: auto;
+}
+
+.animate-height {
+  transition: all 0.5s;
 }

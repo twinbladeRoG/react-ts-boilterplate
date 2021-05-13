@@ -14,8 +14,9 @@ const AccordianCollapse: React.FC<AccordianCollapseProps> = ({ children, classNa
     <div
       className={classNames(
         className,
-        'overflow-auto',
-        eventKey === currentEventKey ? 'h-full' : 'h-0',
+        'animate-height',
+        'bg-white p-5 border',
+        eventKey === currentEventKey ? 'h-full overflow-y-auto' : 'h-0 overflow-y-hidden',
       )}
     >
       {children}
