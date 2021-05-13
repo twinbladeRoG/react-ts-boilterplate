@@ -6,11 +6,10 @@ import ModalContext from './ModalContext';
 
 export interface ModalHeaderProps {
   closeButton?: boolean;
-  children: React.ReactNode;
   className?: string;
 }
 
-const ModalHeader = ({ closeButton, children, className }: ModalHeaderProps) => {
+const ModalHeader: React.FC<ModalHeaderProps> = ({ closeButton, children, className }) => {
   const context = React.useContext(ModalContext);
 
   const handleClose = () => {

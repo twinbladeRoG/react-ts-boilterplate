@@ -7,7 +7,7 @@ export interface ModalFooterProps {
   align?: 'left' | 'right' | 'center';
 }
 
-const ModalFooter = ({ children, className, align }: ModalFooterProps) => {
+const ModalFooter: React.FC<ModalFooterProps> = ({ children, className, align }) => {
   const getAlignment = React.useCallback(() => {
     switch (align) {
       case 'left':
@@ -16,7 +16,6 @@ const ModalFooter = ({ children, className, align }: ModalFooterProps) => {
         return 'text-center';
       case 'right':
         return 'text-right';
-
       default:
         return 'text-right';
     }
