@@ -5,7 +5,7 @@
  - [x] Tailwind CSS Setup
  - [x] TypeScript Integration
  - [x] Husky Integration
- - [ ] Stylelint Setup
+ - [x] Stylelint Setup
  - [ ] Tailwind CSS Components
  - [ ] React Query + Fetch API
  - [ ] React Table
