@@ -25,7 +25,7 @@
 
 ## React Components
  - [x] Accordian
- - [ ] Badge
+ - [x] Badge
  - [ ] Breadcrumb
  - [x] Buttons
  - [x] Cards

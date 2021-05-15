@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Accordian from '../components/common/Accordian/Accordian';
+import Badge from '../components/common/Badge/Badge';
 import Button from '../components/common/Button';
 import Modal from '../components/common/Modal/Modal';
 
@@ -215,10 +216,41 @@ const Home = () => {
               voluptatem laboriosam voluptatibus labore quia, veniam ex porro nostrum numquam modi
             </Accordian.Collapse>
           </Accordian>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Badges</h4>
+          <hr className="mb-5" />
+
+          <div className="flex items-center space-x-4 mb-7">
+            <Badge>Who</Badge>
+            <Badge color="red-400">Let</Badge>
+            <Badge color="yellow-400">The</Badge>
+            <Badge color="gray-400">Dogs</Badge>
+            <Badge color="green-400">Out</Badge>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <Badge pill>Who</Badge>
+            <Badge pill color="red-400">
+              Let
+            </Badge>
+            <Badge pill color="yellow-400">
+              The
+            </Badge>
+            <Badge pill color="gray-400">
+              Dogs
+            </Badge>
+            <Badge pill color="green-400">
+              Out
+            </Badge>
+          </div>
         </div>
       </section>
     </>
   );
+};
+
+Badge.defaultProps = {
+  color: 'blue-400',
 };
 
 export default Home;
