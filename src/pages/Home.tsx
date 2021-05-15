@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
+import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
 import Modal from '../components/common/Modal/Modal';
 
@@ -228,7 +229,7 @@ const Home = () => {
             <Badge color="green-400">Out</Badge>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 mb-7">
             <Badge pill>Who</Badge>
             <Badge pill color="red-400">
               Let
@@ -243,6 +244,17 @@ const Home = () => {
               Out
             </Badge>
           </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Breadcrumbs</h4>
+          <hr className="mb-5" />
+
+          <Breadcrumb>
+            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+            <Breadcrumb.Item href="#">Category</Breadcrumb.Item>
+            <Breadcrumb.Item href="#" active>
+              Electronics
+            </Breadcrumb.Item>
+          </Breadcrumb>
         </div>
       </section>
     </>

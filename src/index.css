@@ -36,3 +36,7 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+
+.breadcrumb ol li:first-child svg {
+  display: none;
+}

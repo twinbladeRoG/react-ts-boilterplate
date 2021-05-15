@@ -26,7 +26,7 @@
 ## React Components
  - [x] Accordian
  - [x] Badge
- - [ ] Breadcrumb
+ - [x] Breadcrumb
  - [x] Buttons
  - [x] Cards
  - [ ] Carousel
