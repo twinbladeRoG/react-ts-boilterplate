@@ -21,9 +21,10 @@
  - [Tailwind CSS](https://tailwindcss.com/docs)
  - [React Hook Form](https://react-hook-form.com/get-started)
  - [React Table](https://react-table.tanstack.com/docs/overview)
+ - [React Transition Group](https://reactcommunity.org/react-transition-group/)
 
 ## React Components
- - [ ] Accordian
+ - [x] Accordian
  - [ ] Badge
  - [ ] Breadcrumb
  - [x] Buttons

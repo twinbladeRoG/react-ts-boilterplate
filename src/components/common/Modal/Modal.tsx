@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import ReactModal from 'react-modal';
+import { Transition } from 'react-transition-group';
+import { ENTERED, ENTERING, EXITED, EXITING } from 'react-transition-group/Transition';
 import ModalBody from './ModalBody';
 import ModalContext from './ModalContext';
 import ModalFooter from './ModalFooter';
@@ -18,6 +20,15 @@ type ModalProps = React.FC<{
   Footer: typeof ModalFooter;
 };
 
+const DURATION = 300;
+
+const fadeStyles: { [key: string]: string } = {
+  [ENTERING]: 'show',
+  [ENTERED]: 'show',
+  [EXITING]: 'exiting',
+  [EXITED]: 'exit',
+};
+
 const Modal: ModalProps = ({
   show,
   centered,
@@ -26,15 +37,25 @@ const Modal: ModalProps = ({
   scrollable,
   disbaledBackdropPress,
 }) => {
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (show) {
+      setTimeout(() => setOpen(true), DURATION);
+    }
+  }, [show]);
+
   const handleClose = () => {
     if (onClose !== undefined) {
-      onClose();
+      setOpen(false);
+      setTimeout(() => onClose(), DURATION);
     }
   };
 
   const handleRequestClose = () => {
     if (!disbaledBackdropPress && onClose !== undefined) {
-      onClose();
+      setOpen(false);
+      setTimeout(() => onClose(), DURATION);
     }
   };
 
@@ -53,13 +74,18 @@ const Modal: ModalProps = ({
           scrollable && 'modal-dialog-scrollable ',
         )}
       >
-        <div
-          className={classNames(
-            'modal-content border-0 outline-none relative flex flex-col w-full h-full',
+        <Transition in={open} timeout={DURATION}>
+          {state => (
+            <div
+              className={classNames(
+                'modal-content border-0 outline-none relative flex flex-col w-full h-full',
+                fadeStyles[state],
+              )}
+            >
+              {children}
+            </div>
           )}
-        >
-          {children}
-        </div>
+        </Transition>
       </ReactModal>
     </ModalContext.Provider>
   );
