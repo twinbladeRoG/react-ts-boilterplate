@@ -6,22 +6,51 @@ import AccordianToggle from './AccordianToggle';
 type AccordianProps = React.FC<{
   defaultKey: string;
   className?: string;
+  multiple?: boolean;
+  scrollOnOpen?: boolean;
 }> & {
   Toggle: typeof AccordianToggle;
   Collapse: typeof AccordianCollapse;
 };
 
-const Accordian: AccordianProps = ({ defaultKey, children, className }) => {
-  const [key, setKey] = React.useState<string | null>(null);
-  const handleKeyChange = (value: string | null) => setKey(value);
+const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, scrollOnOpen }) => {
+  const [key, setKey] = React.useState<Array<string> | string | null>(null);
 
-  React.useEffect(() => setKey(defaultKey), [defaultKey]);
+  const handleKeyChange = (value: string) => {
+    if (multiple) {
+      if (Array.isArray(key)) {
+        if (key.includes(value)) {
+          setKey(key.filter(i => i !== value));
+        } else {
+          setKey([...key, value]);
+        }
+      }
+    } else {
+      setKey(value);
+    }
+  };
+
+  React.useEffect(() => setKey(multiple ? [defaultKey] : defaultKey), [defaultKey, multiple]);
 
   return (
-    <AccordianContext.Provider value={{ key, onSelect: handleKeyChange }}>
+    <AccordianContext.Provider
+      value={{
+        key,
+        onSelect: handleKeyChange,
+        multiple: Boolean(multiple),
+        scrollOnOpen: Boolean(scrollOnOpen),
+      }}
+    >
       <div className={className}>{children}</div>
     </AccordianContext.Provider>
   );
+};
+
+Accordian.defaultProps = {
+  defaultKey: '',
+  className: '',
+  multiple: false,
+  scrollOnOpen: false,
 };
 
 Accordian.Toggle = AccordianToggle;

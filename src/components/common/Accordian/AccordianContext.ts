@@ -1,13 +1,17 @@
 import React from 'react';
 
 interface AccordianContextProps {
-  key: string | null;
+  key: string | Array<string> | null;
   onSelect(value: string | null): void;
+  multiple: boolean;
+  scrollOnOpen: boolean;
 }
+
 const AccordianContext = React.createContext<AccordianContextProps>({
   key: null,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onSelect: value => {},
+  onSelect() {},
+  multiple: false,
+  scrollOnOpen: false,
 });
 
 export default AccordianContext;

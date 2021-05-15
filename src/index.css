@@ -25,7 +25,3 @@ button {
   height: calc(100vh - 13rem);
   overflow-y: auto;
 }
-
-.animate-height {
-  transition: all 0.5s;
-}
