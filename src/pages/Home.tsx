@@ -281,6 +281,7 @@ const Home = () => {
             <FormGroup controlId="name">
               <FormLabel>Plain Text</FormLabel>
               <FormControl placeholder="Name" plaintext />
+              <Form.Text>Just simple</Form.Text>
             </FormGroup>
           </Form>
         </div>
