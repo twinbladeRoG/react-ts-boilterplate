@@ -271,10 +271,12 @@ const Home = () => {
             <FormGroup controlId="name">
               <FormLabel>Invalid Input</FormLabel>
               <FormControl placeholder="Name" isInvalid />
+              <Form.Control.Feedback type="invalid">Oh noooo!</Form.Control.Feedback>
             </FormGroup>
             <FormGroup controlId="name">
               <FormLabel>Valid Input</FormLabel>
               <FormControl placeholder="Name" isValid />
+              <Form.Control.Feedback type="valid">Go to go!</Form.Control.Feedback>
             </FormGroup>
             <FormGroup controlId="name">
               <FormLabel>Plain Text</FormLabel>
