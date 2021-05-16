@@ -283,6 +283,14 @@ const Home = () => {
               <FormControl placeholder="Name" plaintext />
               <Form.Text>Just simple</Form.Text>
             </FormGroup>
+
+            <Form.Check id="checkbox1" type="checkbox" label="Checkbox 1" />
+            <Form.Check id="checkbox2" type="checkbox" label="Checkbox 2" />
+
+            <div className="my-5">
+              <Form.Check inline id="checkboinline1" name="radio" type="radio" label="Checkbox 1" />
+              <Form.Check inline id="checkboinline2" name="radio" type="radio" label="Checkbox 2" />
+            </div>
           </Form>
         </div>
       </section>
