@@ -3,6 +3,10 @@ import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
 import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
+import Form from '../components/common/Form/Form';
+import FormControl from '../components/common/Form/FormControl';
+import FormGroup from '../components/common/Form/FormGroup';
+import FormLabel from '../components/common/Form/FormLabel';
 import Modal from '../components/common/Modal/Modal';
 
 const Home = () => {
@@ -255,6 +259,28 @@ const Home = () => {
               Electronics
             </Breadcrumb.Item>
           </Breadcrumb>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Form</h4>
+          <hr className="mb-5" />
+
+          <Form>
+            <FormGroup controlId="name">
+              <FormLabel>Normal</FormLabel>
+              <FormControl placeholder="Name" />
+            </FormGroup>
+            <FormGroup controlId="name">
+              <FormLabel>Invalid Input</FormLabel>
+              <FormControl placeholder="Name" isInvalid />
+            </FormGroup>
+            <FormGroup controlId="name">
+              <FormLabel>Valid Input</FormLabel>
+              <FormControl placeholder="Name" isValid />
+            </FormGroup>
+            <FormGroup controlId="name">
+              <FormLabel>Plain Text</FormLabel>
+              <FormControl placeholder="Name" plaintext />
+            </FormGroup>
+          </Form>
         </div>
       </section>
     </>

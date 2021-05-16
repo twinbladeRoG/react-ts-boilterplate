@@ -36,6 +36,7 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "prettier/prettier": "error",
     "indent": 0,
+    "@typescript-eslint/indent": 0,
     "max-len": "off",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
