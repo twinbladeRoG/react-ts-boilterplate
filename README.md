@@ -31,7 +31,7 @@
  - [x] Cards
  - [ ] Carousel
  - [ ] Dropdowns
- - [ ] Forms
+ - [x] Forms
  - [ ] InputGroup
  - [x] Modals
  - [ ] Navbar

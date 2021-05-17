@@ -1,6 +1,7 @@
 import React from 'react';
 import FormCheck from './FormCheck';
 import FormControl from './FormControl';
+import FormFile from './FormFile';
 import FormGroup from './FormGroup';
 import FormLabel from './FormLabel';
 import FormSelect from './FormSelect';
@@ -17,6 +18,7 @@ type FormComponent = React.ForwardRefExoticComponent<
   Text: typeof FormText;
   Check: typeof FormCheck;
   Select: typeof FormSelect;
+  File: typeof FormFile;
 };
 
 const Form = React.forwardRef<HTMLFormElement, FormProps>(
@@ -33,5 +35,6 @@ Form.Control = FormControl;
 Form.Text = FormText;
 Form.Check = FormCheck;
 Form.Select = FormSelect;
+Form.File = FormFile;
 
 export default Form;
