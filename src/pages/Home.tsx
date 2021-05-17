@@ -291,6 +291,13 @@ const Home = () => {
               <Form.Check inline id="checkboinline1" name="radio" type="radio" label="Checkbox 1" />
               <Form.Check inline id="checkboinline2" name="radio" type="radio" label="Checkbox 2" />
             </div>
+
+            <Form.Select>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+              <option value="4">Option 4</option>
+            </Form.Select>
           </Form>
         </div>
       </section>

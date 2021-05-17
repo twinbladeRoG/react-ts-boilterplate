@@ -3,6 +3,7 @@ import FormCheck from './FormCheck';
 import FormControl from './FormControl';
 import FormGroup from './FormGroup';
 import FormLabel from './FormLabel';
+import FormSelect from './FormSelect';
 import FormText from './FormText';
 
 interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
@@ -15,6 +16,7 @@ type FormComponent = React.ForwardRefExoticComponent<
   Control: typeof FormControl;
   Text: typeof FormText;
   Check: typeof FormCheck;
+  Select: typeof FormSelect;
 };
 
 const Form = React.forwardRef<HTMLFormElement, FormProps>(
@@ -30,5 +32,6 @@ Form.Label = FormLabel;
 Form.Control = FormControl;
 Form.Text = FormText;
 Form.Check = FormCheck;
+Form.Select = FormSelect;
 
 export default Form;
