@@ -3,6 +3,7 @@ import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
 import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
+import Dropdown from '../components/common/Dropdown/Dropdown';
 import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
@@ -197,7 +198,7 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Accordian</h4>
           <hr className="mb-5" />
 
-          <Accordian defaultKey="1" multiple scrollOnOpen>
+          <Accordian defaultKey="1" multiple>
             <Accordian.Toggle eventKey="0">Click 1</Accordian.Toggle>
             <Accordian.Collapse eventKey="0">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis a soluta
@@ -304,6 +305,11 @@ const Home = () => {
             <Form.Group controlId="file">
               <Form.File />
             </Form.Group>
+
+            <h4 className="font-semibold text-blue-700 text-lg">Dropdowns</h4>
+            <hr className="mb-5" />
+
+            <Dropdown align="right" drop="up" />
           </Form>
         </div>
       </section>

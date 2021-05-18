@@ -40,3 +40,8 @@ button {
 .breadcrumb ol li:first-child svg {
   display: none;
 }
+
+*[data-popper-reference-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
