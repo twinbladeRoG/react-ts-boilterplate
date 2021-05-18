@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+button {
+  @apply focus:outline-none;
+}
+
 .modal-overlay {
   top: 0;
   left: 0;
@@ -20,4 +24,19 @@
 .modal-dialog-scrollable .modal-body {
   height: calc(100vh - 13rem);
   overflow-y: auto;
+}
+
+.modal-content {
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+.modal-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.breadcrumb ol li:first-child svg {
+  display: none;
 }

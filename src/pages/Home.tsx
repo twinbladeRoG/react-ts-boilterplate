@@ -1,6 +1,12 @@
 import * as React from 'react';
 import Accordian from '../components/common/Accordian/Accordian';
+import Badge from '../components/common/Badge/Badge';
+import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
+import Form from '../components/common/Form/Form';
+import FormControl from '../components/common/Form/FormControl';
+import FormGroup from '../components/common/Form/FormGroup';
+import FormLabel from '../components/common/Form/FormLabel';
 import Modal from '../components/common/Modal/Modal';
 
 const Home = () => {
@@ -191,16 +197,122 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Accordian</h4>
           <hr className="mb-5" />
 
-          <Accordian defaultKey="1">
+          <Accordian defaultKey="1" multiple scrollOnOpen>
             <Accordian.Toggle eventKey="0">Click 1</Accordian.Toggle>
-            <Accordian.Collapse eventKey="0">Accordian 1</Accordian.Collapse>
+            <Accordian.Collapse eventKey="0">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis a soluta
+              aliquid quam quibusdam, corrupti temporibus fuga praesentium numquam.
+            </Accordian.Collapse>
             <Accordian.Toggle eventKey="1">Click 2</Accordian.Toggle>
-            <Accordian.Collapse eventKey="1">Accordian 2</Accordian.Collapse>
+            <Accordian.Collapse eventKey="1">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quas voluptate
+              nesciunt ullam corrupti voluptatem nihil debitis, cupiditate, perspiciatis, magnam in
+              quidem reprehenderit nobis labore nam ratione necessitatibus quis adipisci aperiam
+              delectus totam quo? Earum deserunt aliquam nam recusandae veritatis ea a, provident
+              laborum iure quaerat doloremque autem odio incidunt officia repellendus vitae iusto
+              sunt eligendi? Aut autem dolor at omnis sed soluta adipisci vero natus, ratione ut
+              deserunt quia est necessitatibus nesciunt dolorum non delectus similique veniam esse
+              libero provident. Officia minus atque debitis ipsa minima nesciunt obcaecati
+              consectetur dolorem quas distinctio autem praesentium hic nostrum eum, aliquid eaque
+              consequatur beatae. Quasi ut aliquid architecto, quaerat sed ea veritatis qui fugit
+              sunt nisi. Quibusdam laudantium fugiat aliquid magnam voluptate, aut ipsum
+              voluptatibus dolorem doloremque, sunt distinctio ex. Recusandae laborum aperiam
+              deserunt corrupti tempora iusto maxime non sit earum repudiandae, minima fuga
+              voluptatem laboriosam voluptatibus labore quia, veniam ex porro nostrum numquam modi
+            </Accordian.Collapse>
           </Accordian>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Badges</h4>
+          <hr className="mb-5" />
+
+          <div className="flex items-center space-x-4 mb-7">
+            <Badge>Who</Badge>
+            <Badge color="red-400">Let</Badge>
+            <Badge color="yellow-400">The</Badge>
+            <Badge color="gray-400">Dogs</Badge>
+            <Badge color="green-400">Out</Badge>
+          </div>
+
+          <div className="flex items-center space-x-4 mb-7">
+            <Badge pill>Who</Badge>
+            <Badge pill color="red-400">
+              Let
+            </Badge>
+            <Badge pill color="yellow-400">
+              The
+            </Badge>
+            <Badge pill color="gray-400">
+              Dogs
+            </Badge>
+            <Badge pill color="green-400">
+              Out
+            </Badge>
+          </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Breadcrumbs</h4>
+          <hr className="mb-5" />
+
+          <Breadcrumb>
+            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+            <Breadcrumb.Item href="#">Category</Breadcrumb.Item>
+            <Breadcrumb.Item href="#" active>
+              Electronics
+            </Breadcrumb.Item>
+          </Breadcrumb>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Form</h4>
+          <hr className="mb-5" />
+
+          <Form>
+            <FormGroup controlId="name">
+              <FormLabel>Normal</FormLabel>
+              <FormControl placeholder="Name" />
+            </FormGroup>
+            <FormGroup controlId="name">
+              <FormLabel>Invalid Input</FormLabel>
+              <FormControl placeholder="Name" isInvalid />
+              <Form.Control.Feedback type="invalid">Oh noooo!</Form.Control.Feedback>
+            </FormGroup>
+            <FormGroup controlId="name">
+              <FormLabel>Valid Input</FormLabel>
+              <FormControl placeholder="Name" isValid />
+              <Form.Control.Feedback type="valid">Go to go!</Form.Control.Feedback>
+            </FormGroup>
+            <FormGroup controlId="name">
+              <FormLabel>Plain Text</FormLabel>
+              <FormControl placeholder="Name" plaintext />
+              <Form.Text>Just simple</Form.Text>
+            </FormGroup>
+
+            <Form.Check id="checkbox1" type="checkbox" label="Checkbox 1" />
+            <Form.Check id="checkbox2" type="checkbox" label="Checkbox 2" />
+
+            <div className="my-5">
+              <Form.Check inline id="checkboinline1" name="radio" type="radio" label="Checkbox 1" />
+              <Form.Check inline id="checkboinline2" name="radio" type="radio" label="Checkbox 2" />
+            </div>
+
+            <Form.Group className="mb-3" controlId="select">
+              <Form.Select>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group controlId="file">
+              <Form.File />
+            </Form.Group>
+          </Form>
         </div>
       </section>
     </>
   );
+};
+
+Badge.defaultProps = {
+  color: 'blue-400',
 };
 
 export default Home;
