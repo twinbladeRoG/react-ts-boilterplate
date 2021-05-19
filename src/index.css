@@ -45,3 +45,99 @@ button {
   visibility: hidden;
   pointer-events: none;
 }
+
+.popper-arrow {
+  height: 1rem;
+  position: absolute;
+  width: 1rem;
+  pointer-events: none;
+}
+
+.popper-arrow::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.popper-arrow::after {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.popper-container[data-popper-placement*='bottom'] .popper-arrow {
+  left: 0;
+  margin-top: -0.4rem;
+  top: 0;
+}
+
+.popper-container[data-popper-placement*='bottom'] .popper-arrow::before {
+  border-color: transparent transparent #e5e7eb transparent;
+  border-width: 0 0.5rem 0.4rem 0.5rem;
+  position: absolute;
+  top: -1px;
+}
+
+.popper-container[data-popper-placement*='bottom'] .popper-arrow::after {
+  border-color: transparent transparent white transparent;
+  border-width: 0 0.5rem 0.4rem 0.5rem;
+}
+
+.popper-container[data-popper-placement*='top'] .popper-arrow {
+  bottom: 0;
+  left: 0;
+  margin-bottom: -1rem;
+}
+
+.popper-container[data-popper-placement*='top'] .popper-arrow::before {
+  border-color: #e5e7eb transparent transparent transparent;
+  border-width: 0.4rem 0.5rem 0 0.5rem;
+  position: absolute;
+  top: 1px;
+}
+
+.popper-container[data-popper-placement*='top'] .popper-arrow::after {
+  border-color: white transparent transparent transparent;
+  border-width: 0.4rem 0.5rem 0 0.5rem;
+}
+
+.popper-container[data-popper-placement*='right'] .popper-arrow {
+  left: 0;
+  margin-left: -0.7rem;
+}
+
+.popper-container[data-popper-placement*='right'] .popper-arrow::before {
+  border-color: transparent #e5e7eb transparent transparent;
+  border-width: 0.5rem 0.4rem 0.5rem 0;
+}
+
+.popper-container[data-popper-placement*='right'] .popper-arrow::after {
+  border-color: transparent white transparent transparent;
+  border-width: 0.5rem 0.4rem 0.5rem 0;
+  left: 6px;
+  top: 0;
+}
+
+.popper-container[data-popper-placement*='left'] .popper-arrow {
+  margin-right: -0.7rem;
+  right: 0;
+}
+
+.popper-container[data-popper-placement*='left'] .popper-arrow::before {
+  border-color: transparent transparent transparent #e5e7eb;
+  border-width: 0.5rem 0 0.5rem 0.4em;
+}
+
+.popper-container[data-popper-placement*='left'] .popper-arrow::after {
+  border-color: transparent transparent transparent white;
+  border-width: 0.5rem 0 0.5rem 0.4em;
+  left: 3px;
+  top: 0;
+}

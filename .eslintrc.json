@@ -50,6 +50,7 @@
     "camelcase": "off",
     "no-restricted-syntax": "off",
     "func-names": "off",
+    "operator-linebreak": ["error", "after"],
     "padding-line-between-statements": [
       "error",
       {

@@ -309,7 +309,11 @@ const Home = () => {
             <h4 className="font-semibold text-blue-700 text-lg">Dropdowns</h4>
             <hr className="mb-5" />
 
-            <Dropdown align="right" drop="up" />
+            <Dropdown align="right" drop="down">
+              <Dropdown.Header>Hello World!</Dropdown.Header>
+            </Dropdown>
+
+            <hr className="my-80" />
           </Form>
         </div>
       </section>
