@@ -3,7 +3,9 @@ import classNames from 'classnames';
 import React from 'react';
 import { usePopper } from 'react-popper';
 import Button from '../Button';
+import DropdownContext from './DropdownContext';
 import DropdownHeader from './DropdownHeader';
+import DropdownItem from './DropdownItem';
 
 interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: 'left' | 'middle' | 'right';
@@ -12,6 +14,7 @@ interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
 
 type DropdownComponent = React.FC<DropdownProps> & {
   Header: typeof DropdownHeader;
+  Item: typeof DropdownItem;
 };
 
 function useGetLatest<T>(value: T) {
@@ -107,32 +110,35 @@ const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
   }, [popperElement]);
 
   return (
-    <div>
-      <Button
-        type="button"
-        ref={setReferenceElement}
-        onClick={toggle}
-        className={classNames(className)}
-      >
-        Reference element
-      </Button>
+    <DropdownContext.Provider value={{ onToggle: toggle }}>
+      <>
+        <Button
+          type="button"
+          ref={setReferenceElement}
+          onClick={toggle}
+          className={classNames(className)}
+        >
+          Reference element
+        </Button>
 
-      <div
-        ref={setPopperElement}
-        style={styles.popper}
-        className={classNames(
-          'popper-container py-3 bg-white shadow-xl rounded-lg border',
-          visible ? '' : 'invisible pointer-events-none',
-        )}
-        {...attributes.popper}
-      >
-        {children}
-        <div ref={setArrowElement} style={styles.arrow} className="popper-arrow" />
-      </div>
-    </div>
+        <div
+          ref={setPopperElement}
+          style={styles.popper}
+          className={classNames(
+            'popper-container py-3 bg-white shadow-xl rounded-lg border',
+            visible ? '' : 'invisible pointer-events-none',
+          )}
+          {...attributes.popper}
+        >
+          {children}
+          <div ref={setArrowElement} style={styles.arrow} className="popper-arrow" />
+        </div>
+      </>
+    </DropdownContext.Provider>
   );
 };
 
 Dropdown.Header = DropdownHeader;
+Dropdown.Item = DropdownItem;
 
 export default Dropdown;

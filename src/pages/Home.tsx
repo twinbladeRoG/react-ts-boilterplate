@@ -15,7 +15,6 @@ const Home = () => {
 
   const handleClick = () => {
     setLoading(true);
-
     setTimeout(() => setLoading(false), 3000);
   };
 
@@ -309,8 +308,21 @@ const Home = () => {
             <h4 className="font-semibold text-blue-700 text-lg">Dropdowns</h4>
             <hr className="mb-5" />
 
-            <Dropdown align="right" drop="down">
+            <Dropdown align="right" drop="left">
               <Dropdown.Header>Hello World!</Dropdown.Header>
+              <Dropdown.Item>Item 1</Dropdown.Item>
+              <hr className="border-b" />
+              <Dropdown.Item>Item 2</Dropdown.Item>
+              <hr className="border" />
+              <Dropdown.Item>Item 3</Dropdown.Item>
+              <hr className="border" />
+              <Dropdown.Header>Hello World!</Dropdown.Header>
+              <Dropdown.Item>Item 1</Dropdown.Item>
+              <hr className="border-b" />
+              <Dropdown.Item>Item 2</Dropdown.Item>
+              <hr className="border" />
+              <Dropdown.Item>Item 3</Dropdown.Item>
+              <hr className="border" />
             </Dropdown>
 
             <hr className="my-80" />

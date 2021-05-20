@@ -28,15 +28,14 @@
  - [x] Badge
  - [x] Breadcrumb
  - [x] Buttons
- - [x] Cards
+ - [ ] Cards
  - [ ] Carousel
- - [ ] Dropdowns
+ - [x] Dropdowns
  - [x] Forms
  - [ ] InputGroup
  - [x] Modals
  - [ ] Navbar
  - [ ] Overlays & Popovers
- - [ ] Pagination
  - [ ] Spinners
  - [ ] Tabs
  - [ ] Tooltips
