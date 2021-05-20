@@ -28,7 +28,7 @@
  - [x] Badge
  - [x] Breadcrumb
  - [x] Buttons
- - [ ] Cards
+ - [x] Cards
  - [ ] Carousel
  - [x] Dropdowns
  - [x] Forms

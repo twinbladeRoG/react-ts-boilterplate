@@ -3,6 +3,7 @@ import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
 import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
+import Card from '../components/common/Card/Card';
 import Dropdown from '../components/common/Dropdown/Dropdown';
 import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
@@ -325,7 +326,34 @@ const Home = () => {
               <hr className="border" />
             </Dropdown>
 
-            <hr className="my-80" />
+            <hr className="my-4" />
+
+            <h4 className="font-semibold text-blue-700 text-lg">Cards</h4>
+            <hr className="mb-5" />
+
+            <Card className="mb-5">
+              <Card.Header>
+                <Card.Title>Header</Card.Title>
+              </Card.Header>
+              <Card.Body>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatum amet a cum
+                exercitationem officiis in explicabo fugiat reprehenderit magnam saepe delectus
+                quisquam quos, nemo quam dolores nisi ratione officia architecto at sequi hic! Dicta
+                minima, sed numquam perspiciatis repudiandae magnam consequatur ad, eos nobis,
+                assumenda sunt porro hic incidunt.
+              </Card.Body>
+            </Card>
+
+            <Card className="mb-5">
+              <Card.Image src="https://picsum.photos/1200/300" />
+              <Card.Header>
+                <Card.Title>Header</Card.Title>
+              </Card.Header>
+              <Card.Body>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eos molestiae eius
+                assumenda eum, sed iusto repellendus obcaecati facere doloremque.
+              </Card.Body>
+            </Card>
           </Form>
         </div>
       </section>
