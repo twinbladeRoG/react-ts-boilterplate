@@ -7,6 +7,7 @@
  - [x] Husky Integration
  - [x] Stylelint Setup
  - [ ] Tailwind CSS Components
+ - [ ] Dark Mode
  - [ ] React Query + Fetch API
  - [ ] React Table
  - [ ] React Hook Form
@@ -39,3 +40,5 @@
  - [ ] Spinners
  - [ ] Tabs
  - [ ] Tooltips
+ - [ ] Toast & Alerts
+ - [x] Table

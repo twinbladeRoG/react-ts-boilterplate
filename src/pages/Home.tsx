@@ -11,6 +11,7 @@ import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
 import FormLabel from '../components/common/Form/FormLabel';
 import Modal from '../components/common/Modal/Modal';
+import Table from '../components/common/Table/Table';
 
 const Home = () => {
   const [isLoading, setLoading] = React.useState<boolean>(false);
@@ -359,7 +360,7 @@ const Home = () => {
             <h4 className="font-semibold text-blue-700 text-lg">Carousel</h4>
             <hr className="mb-5" />
 
-            <Carousel vertical={false}>
+            <Carousel className="mb-5" vertical={false}>
               <img src="https://picsum.photos/600/200" alt="" />
               <img src="https://picsum.photos/600/300" alt="" />
               <img src="https://picsum.photos/500/200" alt="" />
@@ -367,6 +368,109 @@ const Home = () => {
               <img src="https://picsum.photos/650/200" alt="" />
               <img src="https://picsum.photos/800/200" alt="" />
             </Carousel>
+
+            <h4 className="font-semibold text-blue-700 text-lg">Table</h4>
+            <hr className="mb-5" />
+
+            <Table className="mb-7">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Title</th>
+                  <th>Status</th>
+                  <th>Role</th>
+                  <th>Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 h-10 w-10">
+                        <img
+                          className="h-10 w-10 rounded-full"
+                          src="https://picsum.photos/200/200"
+                          alt=""
+                        />
+                      </div>
+                      <div className="ml-4">
+                        <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                        <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                    <div className="text-sm text-gray-500">Optimization</div>
+                  </td>
+                  <td>
+                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                      Active
+                    </span>
+                  </td>
+                  <td>Admin</td>
+                  <td>Edit</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 h-10 w-10">
+                        <img
+                          className="h-10 w-10 rounded-full"
+                          src="https://picsum.photos/200/200"
+                          alt=""
+                        />
+                      </div>
+                      <div className="ml-4">
+                        <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                        <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                    <div className="text-sm text-gray-500">Optimization</div>
+                  </td>
+                  <td>
+                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                      Active
+                    </span>
+                  </td>
+                  <td>Admin</td>
+                  <td>Edit</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 h-10 w-10">
+                        <img
+                          className="h-10 w-10 rounded-full"
+                          src="https://picsum.photos/200/200"
+                          alt=""
+                        />
+                      </div>
+                      <div className="ml-4">
+                        <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                        <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                    <div className="text-sm text-gray-500">Optimization</div>
+                  </td>
+                  <td>
+                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                      Active
+                    </span>
+                  </td>
+                  <td>Admin</td>
+                  <td>Edit</td>
+                </tr>
+              </tbody>
+            </Table>
           </Form>
         </div>
       </section>

@@ -184,3 +184,43 @@ button {
   background-color: #000;
   color: black;
 }
+
+table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+thead {
+  @apply bg-gray-100;
+}
+
+th {
+  @apply px-5 py-3 text-gray-500 font-medium tracking-wider text-left;
+}
+
+tbody {
+  @apply bg-white divide-y divide-gray-200;
+}
+
+td {
+  @apply px-5 py-3;
+}
+
+table.table-bordered {
+  @apply border;
+}
+
+table.table-bordered thead tr {
+  @apply divide-x;
+}
+
+table.table-bordered tbody tr {
+  @apply divide-x;
+}
+
+table.table-borderless {
+  @apply divide-y-0;
+}
+
+table.table-borderless tbody {
+  @apply divide-y-0;
+}
