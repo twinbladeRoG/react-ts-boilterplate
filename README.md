@@ -29,7 +29,7 @@
  - [x] Breadcrumb
  - [x] Buttons
  - [x] Cards
- - [ ] Carousel
+ - [x] Carousel
  - [x] Dropdowns
  - [x] Forms
  - [ ] InputGroup

@@ -94,7 +94,7 @@ const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
           !tooltipRef.contains(target) &&
           !triggerRef.contains(target)
         ) {
-          toggle();
+          // toggle();
         }
       }
     },

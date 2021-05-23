@@ -4,6 +4,7 @@ import Badge from '../components/common/Badge/Badge';
 import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
 import Card from '../components/common/Card/Card';
+import Carousel from '../components/common/Carousel/Carousel';
 import Dropdown from '../components/common/Dropdown/Dropdown';
 import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
@@ -354,6 +355,18 @@ const Home = () => {
                 assumenda eum, sed iusto repellendus obcaecati facere doloremque.
               </Card.Body>
             </Card>
+
+            <h4 className="font-semibold text-blue-700 text-lg">Carousel</h4>
+            <hr className="mb-5" />
+
+            <Carousel vertical={false}>
+              <img src="https://picsum.photos/600/200" alt="" />
+              <img src="https://picsum.photos/600/300" alt="" />
+              <img src="https://picsum.photos/500/200" alt="" />
+              <img src="https://picsum.photos/600/200" alt="" />
+              <img src="https://picsum.photos/650/200" alt="" />
+              <img src="https://picsum.photos/800/200" alt="" />
+            </Carousel>
           </Form>
         </div>
       </section>

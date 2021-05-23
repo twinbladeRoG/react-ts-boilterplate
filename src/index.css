@@ -1,3 +1,6 @@
+@import "../node_modules/slick-carousel/slick/slick.css";
+@import "../node_modules/slick-carousel/slick/slick-theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -140,4 +143,44 @@ button {
   border-width: 0.5rem 0 0.5rem 0.4em;
   left: 3px;
   top: 0;
+}
+
+.slick-arrow {
+  z-index: 5;
+}
+
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev {
+  left: 25px
+}
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-size: 40px;
+}
+
+.slick-dots {
+  bottom: 25px;
+}
+
+.slick-dots li button::before {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: white;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: #000;
+  color: black;
 }
