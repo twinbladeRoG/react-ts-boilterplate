@@ -11,6 +11,7 @@ import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
 import FormLabel from '../components/common/Form/FormLabel';
 import Modal from '../components/common/Modal/Modal';
+import Navbar from '../components/common/Navbar/Navbar';
 import Table from '../components/common/Table/Table';
 
 const Home = () => {
@@ -45,10 +46,47 @@ const Home = () => {
         <h2 className="font-semibold text-2xl tracking-wider text-pink-500">React Hook Form v7</h2>
       </section>
 
-      <section className="mx-8 my-10">
+      <section className="mx-3 sm:mx-8 my-10">
         <div className="bg-white shadow-lg p-5">
           <h3 className="font-semibold text-blue-700 text-xl">Components</h3>
           <hr className="mb-5" />
+
+          <h4 className="font-semibold text-blue-700 text-lg">Navbars</h4>
+          <hr className="mb-5" />
+
+          <Navbar className="mb-7">
+            <Navbar.Collapse>
+              <Navbar.Brand>
+                <img
+                  className="block lg:hidden h-8 w-auto"
+                  src="https://picsum.photos/100/100"
+                  alt="Workflow"
+                />
+                <img
+                  className="hidden lg:block h-8 w-auto"
+                  src="https://picsum.photos/400/200"
+                  alt="Workflow"
+                />
+              </Navbar.Brand>
+              <Navbar.Navigation>
+                <Navbar.Link>Dashboard</Navbar.Link>
+                <Navbar.Link>Team</Navbar.Link>
+                <Navbar.Link>Projects</Navbar.Link>
+                <Navbar.Button>Calendar</Navbar.Button>
+              </Navbar.Navigation>
+            </Navbar.Collapse>
+            <Navbar.Menu>
+              <button
+                type="button"
+                className="bg-gray-80 80 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                id="user-menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                <img className="h-8 w-8 rounded-full" src="https://picsum.photos/80/80" alt="" />
+              </button>
+            </Navbar.Menu>
+          </Navbar>
 
           <h4 className="font-semibold text-blue-700 text-lg">Button</h4>
           <hr className="mb-5" />
@@ -228,7 +266,7 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Badges</h4>
           <hr className="mb-5" />
 
-          <div className="flex items-center space-x-4 mb-7">
+          <div className="flex items-center space-x-4 mb-7 flex-wrap">
             <Badge>Who</Badge>
             <Badge color="red-400">Let</Badge>
             <Badge color="yellow-400">The</Badge>
@@ -236,7 +274,7 @@ const Home = () => {
             <Badge color="green-400">Out</Badge>
           </div>
 
-          <div className="flex items-center space-x-4 mb-7">
+          <div className="flex items-center space-x-4 mb-7 flex-wrap">
             <Badge pill>Who</Badge>
             <Badge pill color="red-400">
               Let

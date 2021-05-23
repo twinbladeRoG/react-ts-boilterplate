@@ -6,7 +6,11 @@
 @tailwind utilities;
 
 button {
-  @apply focus:outline-none;
+  @apply focus:outline-none cursor-pointer;
+}
+
+a {
+  @apply cursor-pointer;
 }
 
 .modal-overlay {
@@ -223,4 +227,8 @@ table.table-borderless {
 
 table.table-borderless tbody {
   @apply divide-y-0;
+}
+
+.nav-item {
+  @apply w-full bg-gray-900;
 }

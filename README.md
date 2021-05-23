@@ -35,7 +35,7 @@
  - [x] Forms
  - [ ] InputGroup
  - [x] Modals
- - [ ] Navbar
+ - [x] Navbar
  - [ ] Overlays & Popovers
  - [ ] Spinners
  - [ ] Tabs
