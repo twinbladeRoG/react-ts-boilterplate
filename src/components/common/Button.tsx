@@ -5,6 +5,7 @@ import classnames from 'classnames';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   color?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'rounded';
 }
 
 type ButtonComponent = React.ForwardRefExoticComponent<
@@ -85,6 +86,7 @@ const Button: ButtonComponent = React.forwardRef(
 Button.defaultProps = {
   color: 'blue-400',
   isLoading: false,
+  variant: 'primary',
 };
 
 export default Button;

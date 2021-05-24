@@ -77,9 +77,19 @@ const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
     tooltipRef: popperElement,
   });
 
+  const handleOpen = React.useCallback(() => {
+    const { open } = getLatest();
+    if (!open) setVisible(true);
+  }, [getLatest]);
+  const handleClose = React.useCallback(() => {
+    const { open } = getLatest();
+    if (open) setVisible(false);
+  }, [getLatest]);
+
   const toggle = React.useCallback(() => {
     const { open } = getLatest();
-    setVisible(!open);
+    if (open) handleClose();
+    else handleOpen();
   }, [getLatest]);
 
   const onBodyClick = React.useCallback(
@@ -94,7 +104,7 @@ const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
           !tooltipRef.contains(target) &&
           !triggerRef.contains(target)
         ) {
-          // toggle();
+          handleClose();
         }
       }
     },

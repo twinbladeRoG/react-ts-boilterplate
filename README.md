@@ -42,3 +42,4 @@
  - [ ] Tooltips
  - [ ] Toast & Alerts
  - [x] Table
+ - [ ] Sidebar
