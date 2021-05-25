@@ -12,6 +12,7 @@ import FormGroup from '../components/common/Form/FormGroup';
 import FormLabel from '../components/common/Form/FormLabel';
 import Modal from '../components/common/Modal/Modal';
 import Navbar from '../components/common/Navbar/Navbar';
+import Spinner from '../components/common/Spinner/Spinner';
 import Table from '../components/common/Table/Table';
 
 const Home = () => {
@@ -509,6 +510,13 @@ const Home = () => {
                 </tr>
               </tbody>
             </Table>
+
+            <h4 className="font-semibold text-blue-700 text-lg">Spinners</h4>
+            <hr className="mb-5" />
+
+            <div className="relative">
+              <Spinner size={20} />
+            </div>
           </Form>
         </div>
       </section>

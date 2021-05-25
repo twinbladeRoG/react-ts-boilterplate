@@ -23,6 +23,7 @@
  - [React Hook Form](https://react-hook-form.com/get-started)
  - [React Table](https://react-table.tanstack.com/docs/overview)
  - [React Transition Group](https://reactcommunity.org/react-transition-group/)
+ - [React Spinners](https://loading.io/css/)
 
 ## React Components
  - [x] Accordian
@@ -37,7 +38,7 @@
  - [x] Modals
  - [x] Navbar
  - [ ] Overlays & Popovers
- - [ ] Spinners
+ - [x] Spinners
  - [ ] Tabs
  - [ ] Tooltips
  - [ ] Toast & Alerts
