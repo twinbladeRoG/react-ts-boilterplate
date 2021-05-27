@@ -1,20 +1,31 @@
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
+import ReactTooltip from 'react-tooltip';
 import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
 import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
 import Button from '../components/common/Button';
+import Card from '../components/common/Card/Card';
+import Carousel from '../components/common/Carousel/Carousel';
+import Dropdown from '../components/common/Dropdown/Dropdown';
 import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
 import FormLabel from '../components/common/Form/FormLabel';
+import InputGroup from '../components/common/InputGroup/InputGroup';
 import Modal from '../components/common/Modal/Modal';
+import Navbar from '../components/common/Navbar/Navbar';
+import Spinner from '../components/common/Spinner/Spinner';
+import Table from '../components/common/Table/Table';
+import Tab from '../components/common/Tabs/Tab';
+import TabButton from '../components/common/Tabs/TabButton';
 
 const Home = () => {
   const [isLoading, setLoading] = React.useState<boolean>(false);
 
   const handleClick = () => {
     setLoading(true);
-
     setTimeout(() => setLoading(false), 3000);
   };
 
@@ -42,10 +53,47 @@ const Home = () => {
         <h2 className="font-semibold text-2xl tracking-wider text-pink-500">React Hook Form v7</h2>
       </section>
 
-      <section className="mx-8 my-10">
+      <section className="mx-3 sm:mx-8 my-10">
         <div className="bg-white shadow-lg p-5">
           <h3 className="font-semibold text-blue-700 text-xl">Components</h3>
           <hr className="mb-5" />
+
+          <h4 className="font-semibold text-blue-700 text-lg">Navbars</h4>
+          <hr className="mb-5" />
+
+          <Navbar className="mb-7">
+            <Navbar.Collapse>
+              <Navbar.Brand>
+                <img
+                  className="block lg:hidden h-8 w-auto"
+                  src="https://picsum.photos/100/100"
+                  alt="Workflow"
+                />
+                <img
+                  className="hidden lg:block h-8 w-auto"
+                  src="https://picsum.photos/400/200"
+                  alt="Workflow"
+                />
+              </Navbar.Brand>
+              <Navbar.Navigation>
+                <Navbar.Link>Dashboard</Navbar.Link>
+                <Navbar.Link>Team</Navbar.Link>
+                <Navbar.Link>Projects</Navbar.Link>
+                <Navbar.Button>Calendar</Navbar.Button>
+              </Navbar.Navigation>
+            </Navbar.Collapse>
+            <Navbar.Menu>
+              <button
+                type="button"
+                className="bg-gray-80 80 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                id="user-menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                <img className="h-8 w-8 rounded-full" src="https://picsum.photos/80/80" alt="" />
+              </button>
+            </Navbar.Menu>
+          </Navbar>
 
           <h4 className="font-semibold text-blue-700 text-lg">Button</h4>
           <hr className="mb-5" />
@@ -197,7 +245,7 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Accordian</h4>
           <hr className="mb-5" />
 
-          <Accordian defaultKey="1" multiple scrollOnOpen>
+          <Accordian defaultKey="1" multiple>
             <Accordian.Toggle eventKey="0">Click 1</Accordian.Toggle>
             <Accordian.Collapse eventKey="0">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis officiis a soluta
@@ -225,7 +273,7 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Badges</h4>
           <hr className="mb-5" />
 
-          <div className="flex items-center space-x-4 mb-7">
+          <div className="flex items-center space-x-4 mb-7 flex-wrap">
             <Badge>Who</Badge>
             <Badge color="red-400">Let</Badge>
             <Badge color="yellow-400">The</Badge>
@@ -233,7 +281,7 @@ const Home = () => {
             <Badge color="green-400">Out</Badge>
           </div>
 
-          <div className="flex items-center space-x-4 mb-7">
+          <div className="flex items-center space-x-4 mb-7 flex-wrap">
             <Badge pill>Who</Badge>
             <Badge pill color="red-400">
               Let
@@ -305,6 +353,244 @@ const Home = () => {
               <Form.File />
             </Form.Group>
           </Form>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Dropdowns</h4>
+          <hr className="mb-5" />
+
+          <Dropdown align="right" drop="left">
+            <Dropdown.Header>Hello World!</Dropdown.Header>
+            <Dropdown.Item>Item 1</Dropdown.Item>
+            <hr className="border-b" />
+            <Dropdown.Item>Item 2</Dropdown.Item>
+            <hr className="border" />
+            <Dropdown.Item>Item 3</Dropdown.Item>
+            <hr className="border" />
+            <Dropdown.Header>Hello World!</Dropdown.Header>
+            <Dropdown.Item>Item 1</Dropdown.Item>
+            <hr className="border-b" />
+            <Dropdown.Item>Item 2</Dropdown.Item>
+            <hr className="border" />
+            <Dropdown.Item>Item 3</Dropdown.Item>
+            <hr className="border" />
+          </Dropdown>
+
+          <hr className="my-4" />
+
+          <h4 className="font-semibold text-blue-700 text-lg">Cards</h4>
+          <hr className="mb-5" />
+
+          <Card className="mb-5">
+            <Card.Header>
+              <Card.Title>Header</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatum amet a cum
+              exercitationem officiis in explicabo fugiat reprehenderit magnam saepe delectus
+              quisquam quos, nemo quam dolores nisi ratione officia architecto at sequi hic! Dicta
+              minima, sed numquam perspiciatis repudiandae magnam consequatur ad, eos nobis,
+              assumenda sunt porro hic incidunt.
+            </Card.Body>
+          </Card>
+
+          <Card className="mb-5">
+            <Card.Image src="https://picsum.photos/1200/300" />
+            <Card.Header>
+              <Card.Title>Header</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eos molestiae eius
+              assumenda eum, sed iusto repellendus obcaecati facere doloremque.
+            </Card.Body>
+          </Card>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Carousel</h4>
+          <hr className="mb-5" />
+
+          <Carousel className="mb-5" vertical={false}>
+            <img src="https://picsum.photos/600/200" alt="" />
+            <img src="https://picsum.photos/600/300" alt="" />
+            <img src="https://picsum.photos/500/200" alt="" />
+            <img src="https://picsum.photos/600/200" alt="" />
+            <img src="https://picsum.photos/650/200" alt="" />
+            <img src="https://picsum.photos/800/200" alt="" />
+          </Carousel>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Table</h4>
+          <hr className="mb-5" />
+
+          <Table className="mb-7">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-10 w-10">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                      <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                  <div className="text-sm text-gray-500">Optimization</div>
+                </td>
+                <td>
+                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td>Admin</td>
+                <td>Edit</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-10 w-10">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                      <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                  <div className="text-sm text-gray-500">Optimization</div>
+                </td>
+                <td>
+                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td>Admin</td>
+                <td>Edit</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-10 w-10">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                      <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                  <div className="text-sm text-gray-500">Optimization</div>
+                </td>
+                <td>
+                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td>Admin</td>
+                <td>Edit</td>
+              </tr>
+            </tbody>
+          </Table>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Spinners</h4>
+          <hr className="mb-5" />
+
+          <div className="relative mb-7">
+            <Spinner size={20} />
+          </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Input Groups</h4>
+          <hr className="mb-5" />
+
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+              <InputGroup.Text className="bg-blue-200">In between</InputGroup.Text>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+            </InputGroup.Prepend>
+            <Form.Control placeholder="In control" />
+            <InputGroup.Append>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+              <InputGroup.Text className="bg-blue-200">
+                <FontAwesomeIcon icon={faMailBulk} className="text-blue-600" />
+              </InputGroup.Text>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+            </InputGroup.Append>
+          </InputGroup>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Tabs</h4>
+          <hr className="mb-5" />
+
+          <div className="mb-7">
+            <Tab activeKey="1">
+              <div className="flex">
+                <TabButton eventKey="1">Tab 1</TabButton>
+                <TabButton eventKey="2">Tab 2</TabButton>
+                <TabButton eventKey="3">Tab 3</TabButton>
+              </div>
+              <Tab.Pane eventKey="1">
+                TAB 1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam asperiores
+                consectetur deleniti, in optio sed accusantium minima fugit corporis ullam!
+              </Tab.Pane>
+              <Tab.Pane eventKey="2">
+                TAB 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
+                itaque.
+              </Tab.Pane>
+              <Tab.Pane eventKey="3">
+                Tab 3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus voluptate
+                explicabo error iusto doloribus? Totam, modi non? Architecto numquam, amet optio in
+                est sed. Nulla labore aliquid voluptates obcaecati temporibus.
+              </Tab.Pane>
+            </Tab>
+          </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Tooltips</h4>
+          <hr className="mb-5" />
+
+          <p data-tip data-for="happyFace" className="inline-block mb-7">
+            Hover me!
+          </p>
+          <ReactTooltip id="happyFace" place="bottom" type="dark" effect="solid">
+            <span className="w-16">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quas veritatis
+              illo tempora pariatur odit incidunt eligendi amet culpa blanditiis recusandae autem,
+              corporis exercitationem nobis alias ut quae vero vitae.
+            </span>
+          </ReactTooltip>
         </div>
       </section>
     </>

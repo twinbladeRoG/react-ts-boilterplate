@@ -1,9 +1,16 @@
+@import "../node_modules/slick-carousel/slick/slick.css";
+@import "../node_modules/slick-carousel/slick/slick-theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 button {
-  @apply focus:outline-none;
+  @apply focus:outline-none cursor-pointer;
+}
+
+a {
+  @apply cursor-pointer;
 }
 
 .modal-overlay {
@@ -39,4 +46,273 @@ button {
 
 .breadcrumb ol li:first-child svg {
   display: none;
+}
+
+*[data-popper-reference-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.popper-arrow {
+  height: 1rem;
+  position: absolute;
+  width: 1rem;
+  pointer-events: none;
+}
+
+.popper-arrow::before {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.popper-arrow::after {
+  border-style: solid;
+  content: '';
+  display: block;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.popper-container[data-popper-placement*='bottom'] .popper-arrow {
+  left: 0;
+  margin-top: -0.4rem;
+  top: 0;
+}
+
+.popper-container[data-popper-placement*='bottom'] .popper-arrow::before {
+  border-color: transparent transparent #e5e7eb transparent;
+  border-width: 0 0.5rem 0.4rem 0.5rem;
+  position: absolute;
+  top: -1px;
+}
+
+.popper-container[data-popper-placement*='bottom'] .popper-arrow::after {
+  border-color: transparent transparent white transparent;
+  border-width: 0 0.5rem 0.4rem 0.5rem;
+}
+
+.popper-container[data-popper-placement*='top'] .popper-arrow {
+  bottom: 0;
+  left: 0;
+  margin-bottom: -1rem;
+}
+
+.popper-container[data-popper-placement*='top'] .popper-arrow::before {
+  border-color: #e5e7eb transparent transparent transparent;
+  border-width: 0.4rem 0.5rem 0 0.5rem;
+  position: absolute;
+  top: 1px;
+}
+
+.popper-container[data-popper-placement*='top'] .popper-arrow::after {
+  border-color: white transparent transparent transparent;
+  border-width: 0.4rem 0.5rem 0 0.5rem;
+}
+
+.popper-container[data-popper-placement*='right'] .popper-arrow {
+  left: 0;
+  margin-left: -0.7rem;
+}
+
+.popper-container[data-popper-placement*='right'] .popper-arrow::before {
+  border-color: transparent #e5e7eb transparent transparent;
+  border-width: 0.5rem 0.4rem 0.5rem 0;
+}
+
+.popper-container[data-popper-placement*='right'] .popper-arrow::after {
+  border-color: transparent white transparent transparent;
+  border-width: 0.5rem 0.4rem 0.5rem 0;
+  left: 6px;
+  top: 0;
+}
+
+.popper-container[data-popper-placement*='left'] .popper-arrow {
+  margin-right: -0.7rem;
+  right: 0;
+}
+
+.popper-container[data-popper-placement*='left'] .popper-arrow::before {
+  border-color: transparent transparent transparent #e5e7eb;
+  border-width: 0.5rem 0 0.5rem 0.4em;
+}
+
+.popper-container[data-popper-placement*='left'] .popper-arrow::after {
+  border-color: transparent transparent transparent white;
+  border-width: 0.5rem 0 0.5rem 0.4em;
+  left: 3px;
+  top: 0;
+}
+
+.slick-arrow {
+  z-index: 5;
+}
+
+.slick-next {
+  right: 25px;
+}
+
+.slick-prev {
+  left: 25px
+}
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-size: 40px;
+}
+
+.slick-dots {
+  bottom: 25px;
+}
+
+.slick-dots li button::before {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: white;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: #000;
+  color: black;
+}
+
+table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+thead {
+  @apply bg-gray-100;
+}
+
+th {
+  @apply px-5 py-3 text-gray-500 font-medium tracking-wider text-left;
+}
+
+tbody {
+  @apply bg-white divide-y divide-gray-200;
+}
+
+td {
+  @apply px-5 py-3;
+}
+
+table.table-bordered {
+  @apply border;
+}
+
+table.table-bordered thead tr {
+  @apply divide-x;
+}
+
+table.table-bordered tbody tr {
+  @apply divide-x;
+}
+
+table.table-borderless {
+  @apply divide-y-0;
+}
+
+table.table-borderless tbody {
+  @apply divide-y-0;
+}
+
+.nav-item {
+  @apply w-full bg-gray-900;
+}
+
+/* Spinners */
+.spinner-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.spinner-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #ff0;
+  border-radius: 50%;
+  animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #ff0 transparent transparent transparent;
+}
+
+.spinner-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.spinner-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.spinner-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes spinner-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* InputGroup */
+.input-group .form-control {
+  width: 1%;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.input-group .form-control:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group .form-control:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group .input-group-prepend .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.input-group .input-group-append .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group .input-group-append .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.input-group .input-group-append .btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }

@@ -7,6 +7,8 @@
  - [x] Husky Integration
  - [x] Stylelint Setup
  - [ ] Tailwind CSS Components
+ - [ ] Dark Mode
+ = [ ] Headless UI Integration
  - [ ] React Query + Fetch API
  - [ ] React Table
  - [ ] React Hook Form
@@ -22,6 +24,8 @@
  - [React Hook Form](https://react-hook-form.com/get-started)
  - [React Table](https://react-table.tanstack.com/docs/overview)
  - [React Transition Group](https://reactcommunity.org/react-transition-group/)
+ - [React Spinners](https://loading.io/css/)
+ - [React tooltop](https://wwayne.github.io/react-tooltip/)
 
 ## React Components
  - [x] Accordian
@@ -29,14 +33,13 @@
  - [x] Breadcrumb
  - [x] Buttons
  - [x] Cards
- - [ ] Carousel
- - [ ] Dropdowns
+ - [x] Carousel
+ - [x] Dropdowns
  - [x] Forms
- - [ ] InputGroup
+ - [x] InputGroup
  - [x] Modals
- - [ ] Navbar
- - [ ] Overlays & Popovers
- - [ ] Pagination
- - [ ] Spinners
- - [ ] Tabs
- - [ ] Tooltips
+ - [x] Navbar
+ - [x] Spinners
+ - [x] Tabs
+ - [x] Table
+ - [x] Tooltips

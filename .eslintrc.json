@@ -50,6 +50,7 @@
     "camelcase": "off",
     "no-restricted-syntax": "off",
     "func-names": "off",
+    "operator-linebreak": "off",
     "padding-line-between-statements": [
       "error",
       {
@@ -77,6 +78,14 @@
     "react-hooks/exhaustive-deps": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/button-has-type": [
+      "error",
+      {
+        "button": true,
+        "reset": true,
+        "submit": true
+      }
+    ]
   }
 }
