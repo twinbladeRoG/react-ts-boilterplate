@@ -1,6 +1,7 @@
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
+import ReactTooltip from 'react-tooltip';
 import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
 import Breadcrumb from '../components/common/Breadcrumb/Breadcrumb';
@@ -576,6 +577,20 @@ const Home = () => {
               </Tab.Pane>
             </Tab>
           </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Tooltips</h4>
+          <hr className="mb-5" />
+
+          <p data-tip data-for="happyFace" className="inline-block mb-7">
+            Hover me!
+          </p>
+          <ReactTooltip id="happyFace" place="bottom" type="dark" effect="solid">
+            <span className="w-16">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quas veritatis
+              illo tempora pariatur odit incidunt eligendi amet culpa blanditiis recusandae autem,
+              corporis exercitationem nobis alias ut quae vero vitae.
+            </span>
+          </ReactTooltip>
         </div>
       </section>
     </>

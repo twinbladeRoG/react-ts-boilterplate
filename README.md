@@ -24,6 +24,7 @@
  - [React Table](https://react-table.tanstack.com/docs/overview)
  - [React Transition Group](https://reactcommunity.org/react-transition-group/)
  - [React Spinners](https://loading.io/css/)
+ - [React tooltop](https://wwayne.github.io/react-tooltip/)
 
 ## React Components
  - [x] Accordian
@@ -40,5 +41,4 @@
  - [x] Spinners
  - [x] Tabs
  - [x] Table
- - [ ] Tooltips
- - [ ] Overlays & Popovers
+ - [x] Tooltips
