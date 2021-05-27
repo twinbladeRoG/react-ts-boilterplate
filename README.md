@@ -6,12 +6,13 @@
  - [x] TypeScript Integration
  - [x] Husky Integration
  - [x] Stylelint Setup
- - [ ] Tailwind CSS Components
+ - [x] Tailwind CSS Components
  - [ ] Dark Mode
- = [ ] Headless UI Integration
- - [ ] React Query + Fetch API
+ - [ ] Headless UI Integration
+ - [ ] Storyboard
  - [ ] React Table
  - [ ] React Hook Form
+ - [ ] React Query + Fetch API
  - [ ] E2E Testing
  - [ ] Unit Testing
 
