@@ -44,6 +44,7 @@ const Button: ButtonComponent = React.forwardRef(
         ref={ref}
         className={classnames(
           className,
+          'btn',
           'text-white font-medium px-4 py-2 shadow rounded',
           'focus:outline-none focus:ring-4 focus:shadow-lg hover:shadow-lg',
           'transition duration-300 ease-in-out',

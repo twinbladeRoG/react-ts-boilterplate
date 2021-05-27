@@ -1,3 +1,5 @@
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import Accordian from '../components/common/Accordian/Accordian';
 import Badge from '../components/common/Badge/Badge';
@@ -10,6 +12,7 @@ import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
 import FormLabel from '../components/common/Form/FormLabel';
+import InputGroup from '../components/common/InputGroup/InputGroup';
 import Modal from '../components/common/Modal/Modal';
 import Navbar from '../components/common/Navbar/Navbar';
 import Spinner from '../components/common/Spinner/Spinner';
@@ -346,178 +349,205 @@ const Home = () => {
             <Form.Group controlId="file">
               <Form.File />
             </Form.Group>
-
-            <h4 className="font-semibold text-blue-700 text-lg">Dropdowns</h4>
-            <hr className="mb-5" />
-
-            <Dropdown align="right" drop="left">
-              <Dropdown.Header>Hello World!</Dropdown.Header>
-              <Dropdown.Item>Item 1</Dropdown.Item>
-              <hr className="border-b" />
-              <Dropdown.Item>Item 2</Dropdown.Item>
-              <hr className="border" />
-              <Dropdown.Item>Item 3</Dropdown.Item>
-              <hr className="border" />
-              <Dropdown.Header>Hello World!</Dropdown.Header>
-              <Dropdown.Item>Item 1</Dropdown.Item>
-              <hr className="border-b" />
-              <Dropdown.Item>Item 2</Dropdown.Item>
-              <hr className="border" />
-              <Dropdown.Item>Item 3</Dropdown.Item>
-              <hr className="border" />
-            </Dropdown>
-
-            <hr className="my-4" />
-
-            <h4 className="font-semibold text-blue-700 text-lg">Cards</h4>
-            <hr className="mb-5" />
-
-            <Card className="mb-5">
-              <Card.Header>
-                <Card.Title>Header</Card.Title>
-              </Card.Header>
-              <Card.Body>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatum amet a cum
-                exercitationem officiis in explicabo fugiat reprehenderit magnam saepe delectus
-                quisquam quos, nemo quam dolores nisi ratione officia architecto at sequi hic! Dicta
-                minima, sed numquam perspiciatis repudiandae magnam consequatur ad, eos nobis,
-                assumenda sunt porro hic incidunt.
-              </Card.Body>
-            </Card>
-
-            <Card className="mb-5">
-              <Card.Image src="https://picsum.photos/1200/300" />
-              <Card.Header>
-                <Card.Title>Header</Card.Title>
-              </Card.Header>
-              <Card.Body>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eos molestiae eius
-                assumenda eum, sed iusto repellendus obcaecati facere doloremque.
-              </Card.Body>
-            </Card>
-
-            <h4 className="font-semibold text-blue-700 text-lg">Carousel</h4>
-            <hr className="mb-5" />
-
-            <Carousel className="mb-5" vertical={false}>
-              <img src="https://picsum.photos/600/200" alt="" />
-              <img src="https://picsum.photos/600/300" alt="" />
-              <img src="https://picsum.photos/500/200" alt="" />
-              <img src="https://picsum.photos/600/200" alt="" />
-              <img src="https://picsum.photos/650/200" alt="" />
-              <img src="https://picsum.photos/800/200" alt="" />
-            </Carousel>
-
-            <h4 className="font-semibold text-blue-700 text-lg">Table</h4>
-            <hr className="mb-5" />
-
-            <Table className="mb-7">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Title</th>
-                  <th>Status</th>
-                  <th>Role</th>
-                  <th>Edit</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0 h-10 w-10">
-                        <img
-                          className="h-10 w-10 rounded-full"
-                          src="https://picsum.photos/200/200"
-                          alt=""
-                        />
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                        <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                    <div className="text-sm text-gray-500">Optimization</div>
-                  </td>
-                  <td>
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                      Active
-                    </span>
-                  </td>
-                  <td>Admin</td>
-                  <td>Edit</td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0 h-10 w-10">
-                        <img
-                          className="h-10 w-10 rounded-full"
-                          src="https://picsum.photos/200/200"
-                          alt=""
-                        />
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                        <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                    <div className="text-sm text-gray-500">Optimization</div>
-                  </td>
-                  <td>
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                      Active
-                    </span>
-                  </td>
-                  <td>Admin</td>
-                  <td>Edit</td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0 h-10 w-10">
-                        <img
-                          className="h-10 w-10 rounded-full"
-                          src="https://picsum.photos/200/200"
-                          alt=""
-                        />
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                        <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                    <div className="text-sm text-gray-500">Optimization</div>
-                  </td>
-                  <td>
-                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                      Active
-                    </span>
-                  </td>
-                  <td>Admin</td>
-                  <td>Edit</td>
-                </tr>
-              </tbody>
-            </Table>
-
-            <h4 className="font-semibold text-blue-700 text-lg">Spinners</h4>
-            <hr className="mb-5" />
-
-            <div className="relative">
-              <Spinner size={20} />
-            </div>
           </Form>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Dropdowns</h4>
+          <hr className="mb-5" />
+
+          <Dropdown align="right" drop="left">
+            <Dropdown.Header>Hello World!</Dropdown.Header>
+            <Dropdown.Item>Item 1</Dropdown.Item>
+            <hr className="border-b" />
+            <Dropdown.Item>Item 2</Dropdown.Item>
+            <hr className="border" />
+            <Dropdown.Item>Item 3</Dropdown.Item>
+            <hr className="border" />
+            <Dropdown.Header>Hello World!</Dropdown.Header>
+            <Dropdown.Item>Item 1</Dropdown.Item>
+            <hr className="border-b" />
+            <Dropdown.Item>Item 2</Dropdown.Item>
+            <hr className="border" />
+            <Dropdown.Item>Item 3</Dropdown.Item>
+            <hr className="border" />
+          </Dropdown>
+
+          <hr className="my-4" />
+
+          <h4 className="font-semibold text-blue-700 text-lg">Cards</h4>
+          <hr className="mb-5" />
+
+          <Card className="mb-5">
+            <Card.Header>
+              <Card.Title>Header</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatum amet a cum
+              exercitationem officiis in explicabo fugiat reprehenderit magnam saepe delectus
+              quisquam quos, nemo quam dolores nisi ratione officia architecto at sequi hic! Dicta
+              minima, sed numquam perspiciatis repudiandae magnam consequatur ad, eos nobis,
+              assumenda sunt porro hic incidunt.
+            </Card.Body>
+          </Card>
+
+          <Card className="mb-5">
+            <Card.Image src="https://picsum.photos/1200/300" />
+            <Card.Header>
+              <Card.Title>Header</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eos molestiae eius
+              assumenda eum, sed iusto repellendus obcaecati facere doloremque.
+            </Card.Body>
+          </Card>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Carousel</h4>
+          <hr className="mb-5" />
+
+          <Carousel className="mb-5" vertical={false}>
+            <img src="https://picsum.photos/600/200" alt="" />
+            <img src="https://picsum.photos/600/300" alt="" />
+            <img src="https://picsum.photos/500/200" alt="" />
+            <img src="https://picsum.photos/600/200" alt="" />
+            <img src="https://picsum.photos/650/200" alt="" />
+            <img src="https://picsum.photos/800/200" alt="" />
+          </Carousel>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Table</h4>
+          <hr className="mb-5" />
+
+          <Table className="mb-7">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-10 w-10">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                      <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                  <div className="text-sm text-gray-500">Optimization</div>
+                </td>
+                <td>
+                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td>Admin</td>
+                <td>Edit</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-10 w-10">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                      <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                  <div className="text-sm text-gray-500">Optimization</div>
+                </td>
+                <td>
+                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td>Admin</td>
+                <td>Edit</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-10 w-10">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                      <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                  <div className="text-sm text-gray-500">Optimization</div>
+                </td>
+                <td>
+                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td>Admin</td>
+                <td>Edit</td>
+              </tr>
+            </tbody>
+          </Table>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Spinners</h4>
+          <hr className="mb-5" />
+
+          <div className="relative mb-7">
+            <Spinner size={20} />
+          </div>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Input Groups</h4>
+          <hr className="mb-5" />
+
+          <InputGroup>
+            <InputGroup.Prepend>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+              <InputGroup.Text className="bg-blue-200">In between</InputGroup.Text>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+            </InputGroup.Prepend>
+            <Form.Control placeholder="In control" />
+            <InputGroup.Append>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+              <InputGroup.Text className="bg-blue-200">
+                <FontAwesomeIcon icon={faMailBulk} className="text-blue-600" />
+              </InputGroup.Text>
+              <Button color="gray-300" className="text-gray-900">
+                Button
+              </Button>
+            </InputGroup.Append>
+          </InputGroup>
         </div>
       </section>
     </>

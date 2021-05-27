@@ -28,6 +28,7 @@ const FormControl = React.forwardRef(
         readOnly={readOnly}
         className={classNames(
           className,
+          'form-control',
           'block w-full rounded-lg px-3 py-1',
           'focus:outline-none focus:ring-2',
           plaintext ? 'border-0' : 'border',
