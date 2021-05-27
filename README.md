@@ -8,6 +8,7 @@
  - [x] Stylelint Setup
  - [ ] Tailwind CSS Components
  - [ ] Dark Mode
+ = [ ] Headless UI Integration
  - [ ] React Query + Fetch API
  - [ ] React Table
  - [ ] React Hook Form
