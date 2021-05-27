@@ -17,6 +17,8 @@ import Modal from '../components/common/Modal/Modal';
 import Navbar from '../components/common/Navbar/Navbar';
 import Spinner from '../components/common/Spinner/Spinner';
 import Table from '../components/common/Table/Table';
+import Tab from '../components/common/Tabs/Tab';
+import TabButton from '../components/common/Tabs/TabButton';
 
 const Home = () => {
   const [isLoading, setLoading] = React.useState<boolean>(false);
@@ -525,7 +527,7 @@ const Home = () => {
           <h4 className="font-semibold text-blue-700 text-lg">Input Groups</h4>
           <hr className="mb-5" />
 
-          <InputGroup>
+          <InputGroup className="mb-3">
             <InputGroup.Prepend>
               <Button color="gray-300" className="text-gray-900">
                 Button
@@ -548,6 +550,32 @@ const Home = () => {
               </Button>
             </InputGroup.Append>
           </InputGroup>
+
+          <h4 className="font-semibold text-blue-700 text-lg">Tabs</h4>
+          <hr className="mb-5" />
+
+          <div className="mb-7">
+            <Tab activeKey="1">
+              <div className="flex">
+                <TabButton eventKey="1">Tab 1</TabButton>
+                <TabButton eventKey="2">Tab 2</TabButton>
+                <TabButton eventKey="3">Tab 3</TabButton>
+              </div>
+              <Tab.Pane eventKey="1">
+                TAB 1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam asperiores
+                consectetur deleniti, in optio sed accusantium minima fugit corporis ullam!
+              </Tab.Pane>
+              <Tab.Pane eventKey="2">
+                TAB 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
+                itaque.
+              </Tab.Pane>
+              <Tab.Pane eventKey="3">
+                Tab 3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus voluptate
+                explicabo error iusto doloribus? Totam, modi non? Architecto numquam, amet optio in
+                est sed. Nulla labore aliquid voluptates obcaecati temporibus.
+              </Tab.Pane>
+            </Tab>
+          </div>
         </div>
       </section>
     </>

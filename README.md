@@ -34,13 +34,11 @@
  - [x] Carousel
  - [x] Dropdowns
  - [x] Forms
- - [ ] InputGroup
+ - [x] InputGroup
  - [x] Modals
  - [x] Navbar
- - [ ] Overlays & Popovers
  - [x] Spinners
- - [ ] Tabs
- - [ ] Tooltips
- - [ ] Toast & Alerts
+ - [x] Tabs
  - [x] Table
- - [ ] Sidebar
+ - [ ] Tooltips
+ - [ ] Overlays & Popovers
