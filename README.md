@@ -7,7 +7,7 @@
  - [x] Husky Integration
  - [x] Stylelint Setup
  - [x] Tailwind CSS Components
- - [ ] Dark Mode
+ - [x] Dark Mode
  - [ ] Headless UI Integration
  - [ ] Storyboard
  - [ ] React Table
