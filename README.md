@@ -28,6 +28,18 @@
  - [React Spinners](https://loading.io/css/)
  - [React tooltop](https://wwayne.github.io/react-tooltip/)
 
+## Issues to keep an eye on
+
+1. [**babel-loader** version mismatch between **create-react-app** and **storyboard**](https://github.com/facebook/create-react-app/issues/10123)
+
+```
+Current resolution is to use yarn resolution to downgrade **babel-loader** to v8.1.0
+
+Storyboard Repo Issue: https://github.com/storybookjs/storybook/issues/5183
+
+React Repo Issue: https://github.com/facebook/create-react-app/issues/10123
+```
+
 ## React Components
  - [x] Accordian
  - [x] Badge
