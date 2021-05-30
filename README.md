@@ -70,3 +70,12 @@
   >
   > Storyboard Repo Issue: https://github.com/storybookjs/storybook/issues/10790
   > React Docgen Typescript Repo Issue: https://github.com/styleguidist/react-docgen-typescript/issues/356
+
+
+## NOTES
+
+1. Tailwind CSS classes do not work right out of the box with Storyboard.
+
+> As Tailwind CSS used post-css and autoprefixer to build which we manually configure using craco. Same needs to be done for Storyboard to be able to use tailwind css.
+>
+> We need to modify the webpack config in `.storyboard/main.js`, then import our css files in `./storyboard/preview.js`.
