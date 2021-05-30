@@ -99,7 +99,8 @@ const Button: ButtonComponent = React.forwardRef(
 Button.defaultProps = {
   color: 'blue-400',
   isLoading: false,
-  variant: 'primary',
 };
+
+Button.displayName = 'Button';
 
 export default Button;
