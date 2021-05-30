@@ -12,7 +12,7 @@
     "lint:css": "stylelint \"**/*.css\"",
     "postinstall": "patch-package",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "cross-env BROWSER=none start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "resolutions": {

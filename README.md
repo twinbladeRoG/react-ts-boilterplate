@@ -28,19 +28,6 @@
  - [React Spinners](https://loading.io/css/)
  - [React tooltop](https://wwayne.github.io/react-tooltip/)
 
-## Issues to keep an eye on
-
-1. [**babel-loader** version mismatch between **create-react-app** and **storyboard**](https://github.com/facebook/create-react-app/issues/10123)
-
-
-> Storyboard requires babel-loader **v8.2.2** but React requires **v8.1.0**
->
-> Current resolution is to use yarn resolution to downgrade **babel-loader** to v8.1.0
->
-> Storyboard Repo Issue: https://github.com/storybookjs/storybook/issues/5183
->
-> React Repo Issue: https://github.com/facebook/create-react-app/issues/10123
-
 ## React Components
  - [x] Accordian
  - [x] Badge
@@ -57,3 +44,29 @@
  - [x] Tabs
  - [x] Table
  - [x] Tooltips
+ - [ ] Sidebars / Offcanvas
+
+## Issues to keep an eye on
+
+1. **babel-loader** version mismatch between **create-react-app** and **storyboard**
+
+
+  > *Cause:* Storyboard requires babel-loader **v8.2.2** but React requires **v8.1.0**
+  >
+  > *Solution:* Current resolution is to use yarn resolution to downgrade *babel-loader* to **v8.1.0**
+  >
+  > Storyboard Repo Issue: https://github.com/storybookjs/storybook/issues/5183
+  > React Repo Issue: https://github.com/facebook/create-react-app/issues/10123
+
+2. Storybook server start fails due error in **react-docgen-typescript**
+
+  > *Error:*
+  > `node_modules/react-docgen-typescript/lib/parser.js:475`
+  > `var trimmedText = (tag.text || '').trim();`
+  >
+  > *Cause:* Due to mismatch in TypeScript and TS type JSDocGen
+  >
+  > *Solution:* Current solution is to disable **react-docgen-typescript** in storyboard config in *./storyboard/main.js*. [See More](https://github.com/storybookjs/storybook/issues/10790)
+  >
+  > Storyboard Repo Issue: https://github.com/storybookjs/storybook/issues/10790
+  > React Docgen Typescript Repo Issue: https://github.com/styleguidist/react-docgen-typescript/issues/356
