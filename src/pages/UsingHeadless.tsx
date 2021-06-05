@@ -1,0 +1,31 @@
+import React from 'react';
+import Modal from '../components/common/@headlessui/Modal/Modal';
+import Button from '../components/common/Button';
+
+const UsingHeadless = () => {
+  const [show, setShow] = React.useState(false);
+  const toggle = () => setShow(!show);
+
+  return (
+    <div className="bg-white shadow-lg rounded-md p-5 m-5">
+      <Button onClick={toggle}>Open Modal</Button>
+      <Modal show={show} onClose={toggle}>
+        <Modal.Header closeButton>Headless UI Modal</Modal.Header>
+        <Modal.Body>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi cupiditate facere architecto
+          numquam quod voluptate placeat, laboriosam explicabo deleniti inventore nisi tempora
+          minima sit sed quaerat magni quia adipisci! Id sed magni suscipit error, ut deserunt
+          ratione ab perferendis inventore.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button color="red-400" className="mr-2" onClick={toggle}>
+            Close
+          </Button>
+          <Button color="green-400">Submit</Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
+};
+
+export default UsingHeadless;

@@ -9,6 +9,7 @@ import Button from '../components/common/Button';
 import Card from '../components/common/Card/Card';
 import Carousel from '../components/common/Carousel/Carousel';
 import Dropdown from '../components/common/Dropdown/Dropdown';
+import HeadlessUIDropdown from '../components/common/@headlessui/Dropdown/Dropdown';
 import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
@@ -229,22 +230,22 @@ const Home = () => {
                 Close
               </Button>
 
+              <Modal show={modal} onClose={toggleInnerModal} centered disbaledBackdropPress>
+                <Modal.Header>Inner Modal</Modal.Header>
+                <Modal.Body>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis
+                  laborum consectetur exercitationem reiciendis accusantium velit cupiditate
+                  quibusdam molestiae quos.
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button color="red-400" onClick={toggleInnerModal}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
               <Button color="green-400" onClick={toggleInnerModal}>
                 Submit
-              </Button>
-            </Modal.Footer>
-          </Modal>
-
-          <Modal show={modal} onClose={toggleInnerModal} centered disbaledBackdropPress>
-            <Modal.Header>Inner Modal</Modal.Header>
-            <Modal.Body>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis laborum
-              consectetur exercitationem reiciendis accusantium velit cupiditate quibusdam molestiae
-              quos.
-            </Modal.Body>
-            <Modal.Footer>
-              <Button color="red-400" onClick={toggleInnerModal}>
-                Close
               </Button>
             </Modal.Footer>
           </Modal>
@@ -380,6 +381,16 @@ const Home = () => {
             <Dropdown.Item>Item 3</Dropdown.Item>
             <hr className="border" />
           </Dropdown>
+
+          <div className="my-5">
+            <HeadlessUIDropdown>
+              <HeadlessUIDropdown.Button>Dropdown</HeadlessUIDropdown.Button>
+              <HeadlessUIDropdown.Menu>
+                <HeadlessUIDropdown.Item>Item 1</HeadlessUIDropdown.Item>
+                <HeadlessUIDropdown.Item>Item 2</HeadlessUIDropdown.Item>
+              </HeadlessUIDropdown.Menu>
+            </HeadlessUIDropdown>
+          </div>
 
           <hr className="my-4" />
 
