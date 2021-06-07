@@ -9,7 +9,6 @@ import Button from '../components/common/Button';
 import Card from '../components/common/Card/Card';
 import Carousel from '../components/common/Carousel/Carousel';
 import Dropdown from '../components/common/Dropdown/Dropdown';
-import HeadlessUIDropdown from '../components/common/@headlessui/Dropdown/Dropdown';
 import Form from '../components/common/Form/Form';
 import FormControl from '../components/common/Form/FormControl';
 import FormGroup from '../components/common/Form/FormGroup';
@@ -381,16 +380,6 @@ const Home = () => {
             <Dropdown.Item>Item 3</Dropdown.Item>
             <hr className="border" />
           </Dropdown>
-
-          <div className="my-5">
-            <HeadlessUIDropdown>
-              <HeadlessUIDropdown.Button>Dropdown</HeadlessUIDropdown.Button>
-              <HeadlessUIDropdown.Menu>
-                <HeadlessUIDropdown.Item>Item 1</HeadlessUIDropdown.Item>
-                <HeadlessUIDropdown.Item>Item 2</HeadlessUIDropdown.Item>
-              </HeadlessUIDropdown.Menu>
-            </HeadlessUIDropdown>
-          </div>
 
           <hr className="my-4" />
 
