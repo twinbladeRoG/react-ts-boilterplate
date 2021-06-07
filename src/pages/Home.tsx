@@ -229,22 +229,22 @@ const Home = () => {
                 Close
               </Button>
 
+              <Modal show={modal} onClose={toggleInnerModal} centered disbaledBackdropPress>
+                <Modal.Header>Inner Modal</Modal.Header>
+                <Modal.Body>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis
+                  laborum consectetur exercitationem reiciendis accusantium velit cupiditate
+                  quibusdam molestiae quos.
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button color="red-400" onClick={toggleInnerModal}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
               <Button color="green-400" onClick={toggleInnerModal}>
                 Submit
-              </Button>
-            </Modal.Footer>
-          </Modal>
-
-          <Modal show={modal} onClose={toggleInnerModal} centered disbaledBackdropPress>
-            <Modal.Header>Inner Modal</Modal.Header>
-            <Modal.Body>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis laborum
-              consectetur exercitationem reiciendis accusantium velit cupiditate quibusdam molestiae
-              quos.
-            </Modal.Body>
-            <Modal.Footer>
-              <Button color="red-400" onClick={toggleInnerModal}>
-                Close
               </Button>
             </Modal.Footer>
           </Modal>
