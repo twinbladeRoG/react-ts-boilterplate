@@ -20,9 +20,12 @@ import Spinner from '../components/common/Spinner/Spinner';
 import Table from '../components/common/Table/Table';
 import Tab from '../components/common/Tabs/Tab';
 import TabButton from '../components/common/Tabs/TabButton';
+import ThemeContext from '../components/common/ThemeContext';
 
 const Home = () => {
   const [isLoading, setLoading] = React.useState<boolean>(false);
+
+  const { toggleMode } = React.useContext(ThemeContext);
 
   const handleClick = () => {
     setLoading(true);
@@ -50,11 +53,15 @@ const Home = () => {
           Tailwind CSS v2
         </h2>
         <h2 className="font-semibold text-2xl tracking-wider text-red-500 mb-3">React Query v3</h2>
-        <h2 className="font-semibold text-2xl tracking-wider text-pink-500">React Hook Form v7</h2>
+        <h2 className="font-semibold text-2xl tracking-wider text-pink-500 mb-5">
+          React Hook Form v7
+        </h2>
+
+        <Button onClick={toggleMode}>Dark Mode</Button>
       </section>
 
       <section className="mx-3 sm:mx-8 my-10">
-        <div className="bg-white shadow-lg p-5">
+        <div className="bg-white dark:bg-gray-900 transition-colors shadow-lg p-5">
           <h3 className="font-semibold text-blue-700 text-xl">Components</h3>
           <hr className="mb-5" />
 

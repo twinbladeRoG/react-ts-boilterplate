@@ -55,7 +55,7 @@ const AccordianCollapse: React.FC<AccordianCollapseProps> = ({ children, classNa
   };
 
   return (
-    <Transition in={checkIfOpened()} timeout={duration} onEntered={scroll}>
+    <Transition in={checkIfOpened()} timeout={duration} onEntered={scroll} nodeRef={divRef}>
       {state => (
         <div
           ref={divRef}
