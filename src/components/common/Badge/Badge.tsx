@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   color?: string;
   pill?: boolean;
 }

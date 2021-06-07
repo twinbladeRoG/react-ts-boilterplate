@@ -2,28 +2,16 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * If button in loading state
-   */
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
-  /**
-   * color of button
-   */
   color?: string;
-  /**
-   * variant type of button
-   */
   variant?: 'primary' | 'secondary' | 'outline' | 'rounded';
 }
 
-export type ButtonComponent = React.ForwardRefExoticComponent<
+type ButtonComponent = React.ForwardRefExoticComponent<
   React.RefAttributes<HTMLButtonElement> & ButtonProps
 >;
 
-/**
- * Primary UI component for user interaction
- */
 const Button: ButtonComponent = React.forwardRef(
   ({ className, color, isLoading, disabled, children, ...props }, ref) => {
     const getActiveColor = React.useCallback(() => {
@@ -99,8 +87,7 @@ const Button: ButtonComponent = React.forwardRef(
 Button.defaultProps = {
   color: 'blue-400',
   isLoading: false,
+  variant: 'primary',
 };
-
-Button.displayName = 'Button';
 
 export default Button;

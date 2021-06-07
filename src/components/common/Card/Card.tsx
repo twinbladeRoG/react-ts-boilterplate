@@ -5,9 +5,9 @@ import CardHeader from './CardHeader';
 import CardImage from './CardImage';
 import CardTitle from './CardTitle';
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export type CardComponent = React.FC<CardProps> & {
+type CardComponent = React.FC<CardProps> & {
   Header: typeof CardHeader;
   Title: typeof CardTitle;
   Body: typeof CardBody;
