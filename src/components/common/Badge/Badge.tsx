@@ -1,52 +1,39 @@
 import classNames from 'classnames';
 import React from 'react';
+import { ColorVariant, VariantType } from '../../../types';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  color?: string;
+  variant?: ColorVariant;
+  variantType?: VariantType;
   pill?: boolean;
 }
 
-const Badge: React.FC<BadgeProps> = ({ className, children, color, pill }) => {
-  const getActiveColor = React.useCallback(() => {
-    const colorStrength: string = String(String(color).split('-').pop());
+export type BadgeComponent = React.ForwardRefExoticComponent<
+  React.RefAttributes<HTMLButtonElement> & BadgeProps
+>;
 
-    try {
-      const currentColorStrength = Number.parseInt(colorStrength, 10);
-      let activeColorStrength = currentColorStrength;
-
-      if (currentColorStrength === 50) {
-        activeColorStrength = 100;
-      } else if (currentColorStrength === 900) {
-        activeColorStrength = 800;
-      } else {
-        activeColorStrength = currentColorStrength + 100;
-      }
-
-      return `${String(color).substring(
-        0,
-        String(color).length - colorStrength.length,
-      )}${activeColorStrength}`;
-    } catch (error) {
-      return 'bg-blue-500';
-    }
-  }, [color]);
-
-  return (
+const Badge: BadgeComponent = React.forwardRef(
+  ({ className, children, variant, variantType, pill, ...props }, ref) => (
     <span
+      ref={ref}
+      {...props}
       className={classNames(
         className,
-        'text-xs text-white px-4 py-1',
-        `bg-${getActiveColor()}`,
+        'text-xs px-4 py-1 font-semibold',
+        `bg-${variant}${variantType !== 'default' ? `-${variantType}` : ''}`,
+        variant === 'dark' ? 'text-white' : '',
+        variantType !== 'light' && variant !== 'light' ? 'text-white dark:text-black' : '',
         pill ? 'rounded-full' : 'rounded-md',
       )}
     >
       {children}
     </span>
-  );
-};
+  ),
+);
 
 Badge.defaultProps = {
-  color: 'blue-400',
+  variant: 'primary',
+  variantType: 'default',
   pill: false,
 };
 

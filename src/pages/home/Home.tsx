@@ -4,6 +4,7 @@ import ThemeContext from '../../components/common/ThemeContext';
 import Sidebar from '../../components/Sidebar';
 import UsingHeadless from '../UsingHeadless';
 import AccordionPage from './AccordionPage';
+import BadgePage from './BadgePage';
 
 const Home = () => {
   const { mode, toggleMode } = React.useContext(ThemeContext);
@@ -28,6 +29,7 @@ const Home = () => {
 
         <Switch>
           <Route exact path="/components/accordion" component={AccordionPage} />
+          <Route exact path="/components/badge" component={BadgePage} />
           <Route path="/using-headless" component={UsingHeadless} />
         </Switch>
       </div>
