@@ -32,12 +32,12 @@ module.exports = {
           dark: colors.lime[700],
         },
         light: {
-          light: colors.rose[100],
-          DEFAULT: colors.rose[400],
-          dark: colors.rose[700],
+          light: colors.coolGray[100],
+          DEFAULT: colors.coolGray[200],
+          dark: colors.coolGray[300],
         },
         dark: {
-          light: colors.gray[100],
+          light: colors.gray[600],
           DEFAULT: colors.gray[800],
           dark: colors.gray[900],
         },
@@ -45,7 +45,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderRadius: ['first', 'last'],
+    },
   },
   plugins: [],
 };

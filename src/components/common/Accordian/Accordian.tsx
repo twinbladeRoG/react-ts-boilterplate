@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 import AccordianCollapse from './AccordianCollapse';
 import AccordianContext from './AccordianContext';
@@ -25,6 +26,8 @@ const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, 
           setKey([...key, value]);
         }
       }
+    } else if (value === key) {
+      setKey(null);
     } else {
       setKey(value);
     }
@@ -41,7 +44,11 @@ const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, 
         scrollOnOpen: Boolean(scrollOnOpen),
       }}
     >
-      <div className={className}>{children}</div>
+      <div
+        className={classNames(className, 'bg-white dark:bg-dark-dark rounded-xl overflow-hidden')}
+      >
+        {children}
+      </div>
     </AccordianContext.Provider>
   );
 };
