@@ -5,6 +5,7 @@ import Sidebar from '../../components/Sidebar';
 import UsingHeadless from '../UsingHeadless';
 import AccordionPage from './AccordionPage';
 import BadgePage from './BadgePage';
+import BreadcrumbPage from './BreadcrumbPage';
 
 const Home = () => {
   const { mode, toggleMode } = React.useContext(ThemeContext);
@@ -30,6 +31,7 @@ const Home = () => {
         <Switch>
           <Route exact path="/components/accordion" component={AccordionPage} />
           <Route exact path="/components/badge" component={BadgePage} />
+          <Route exact path="/components/breadcrumb" component={BreadcrumbPage} />
           <Route path="/using-headless" component={UsingHeadless} />
         </Switch>
       </div>

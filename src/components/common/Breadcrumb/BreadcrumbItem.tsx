@@ -2,9 +2,10 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface BreadcrumbItemProps extends React.HTMLAttributes<HTMLLIElement> {
-  href: string;
+  href?: string;
   active?: boolean;
 }
 
@@ -16,10 +17,13 @@ const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   ...props
 }) => (
   <li className={className} {...props}>
-    <a href={href} className={classNames(active ? 'text-blue-600' : '')}>
+    <Link
+      to={String(href)}
+      className={classNames(active ? 'text-blue-600' : 'text-dark dark:text-light')}
+    >
       <FontAwesomeIcon icon={faChevronRight} className="text-blue-600 mr-3" />
       {children}
-    </a>
+    </Link>
   </li>
 );
 
