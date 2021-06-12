@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import logo from '../assets/icon.svg';

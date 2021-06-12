@@ -1,20 +1,14 @@
-/* eslint-disable react/button-has-type */
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
+import { ColorVariant } from '../../types';
+import Spinner from './Spinner/Spinner';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * If button in loading state
-   */
   isLoading?: boolean;
-  /**
-   * color of button
-   */
-  color?: string;
-  /**
-   * variant type of button
-   */
-  variant?: 'primary' | 'secondary' | 'outline' | 'rounded';
+  buttonStyle?: 'default' | 'outline' | 'plain';
+  variant?: ColorVariant;
+  loadingText?: string;
+  size?: 'sm' | 'lg';
 }
 
 export type ButtonComponent = React.ForwardRefExoticComponent<
@@ -25,69 +19,66 @@ export type ButtonComponent = React.ForwardRefExoticComponent<
  * Primary UI component for user interaction
  */
 const Button: ButtonComponent = React.forwardRef(
-  ({ className, color, isLoading, disabled, children, ...props }, ref) => {
-    const getActiveColor = React.useCallback(() => {
-      const colorStrength: string = String(String(color).split('-').pop());
-
-      try {
-        const currentColorStrength = Number.parseInt(colorStrength, 10);
-        let activeColorStrength = currentColorStrength;
-
-        if (currentColorStrength === 50) {
-          activeColorStrength = 100;
-        } else if (currentColorStrength === 900) {
-          activeColorStrength = 800;
-        } else {
-          activeColorStrength = currentColorStrength + 100;
-        }
-
-        return `${String(color).substring(
-          0,
-          String(color).length - colorStrength.length,
-        )}${activeColorStrength}`;
-      } catch (error) {
-        return 'bg-blue-500';
+  (
+    { className, isLoading, loadingText, disabled, children, variant, buttonStyle, size, ...props },
+    ref,
+  ) => {
+    const getButtonClasses = React.useCallback(() => {
+      if (buttonStyle === 'default') {
+        return `bg-${variant} focus:bg-${variant} hover:bg-${variant}-dark ring-${variant}-dark`;
       }
-    }, [color]);
+
+      if (buttonStyle === 'outline') {
+        return classNames(
+          'bg-transparent border-2',
+          variant === 'dark' ? 'text-black' : `text-${variant}`,
+          variant === 'dark'
+            ? 'focus:text-black hover:text-black'
+            : `focus:text-${variant}-dark hover:text-${variant}-dark`,
+          `focus:bg-${variant} hover:bg-${variant}`,
+          `ring-${variant}-dark`,
+          variant === 'dark' ? 'border-black' : `border-${variant}`,
+        );
+      }
+
+      if (buttonStyle === 'plain') {
+        return classNames(
+          'bg-transparent',
+          variant === 'dark' ? 'text-black' : `text-${variant}`,
+          `focus:bg-${variant}-dark focus:bg-opacity-20`,
+          `hover:bg-${variant}-dark hover:bg-opacity-20`,
+          `ring-${variant}-dark`,
+        );
+      }
+
+      return '';
+    }, [variant, buttonStyle]);
 
     return (
       <button
+        type="button"
         {...props}
         ref={ref}
-        className={classnames(
+        className={classNames(
           className,
-          'btn',
-          'text-white font-medium px-4 py-2 shadow rounded',
+          'btn px-4 py-2',
+          getButtonClasses(),
+          'font-medium shadow hover:shadow-xl rounded',
           'focus:outline-none focus:ring-4 focus:shadow-lg hover:shadow-lg',
           'transition duration-300 ease-in-out',
-          `bg-${color} focus:bg-${getActiveColor()} hover:bg-${getActiveColor()} ring-${color}`,
           isLoading ? 'cursor-wait' : disabled ? 'cursor-not-allowed' : 'cursor-pointer',
           disabled && !isLoading && 'opacity-80',
           isLoading && 'animate-pulse',
+          size === 'sm' ? 'text-sm' : '',
+          size === 'lg' ? 'text-lg' : '',
         )}
         disabled={disabled || isLoading}
       >
         {isLoading ? (
-          <svg
-            className="animate-spin h-6 w-6 text-white inline-block"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            />
-          </svg>
+          <>
+            <Spinner />
+            {loadingText ? <span className="ml-3">{loadingText}</span> : null}
+          </>
         ) : (
           children
         )}
@@ -97,8 +88,9 @@ const Button: ButtonComponent = React.forwardRef(
 );
 
 Button.defaultProps = {
-  color: 'blue-400',
   isLoading: false,
+  variant: 'primary',
+  buttonStyle: 'default',
 };
 
 Button.displayName = 'Button';
