@@ -4,7 +4,7 @@ import React from 'react';
 interface CardTitleProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const CardTitle: React.FC<CardTitleProps> = ({ className, children, ...props }) => (
-  <h6 className={classNames(className, 'font-medium text-lg')} {...props}>
+  <h6 className={classNames(className, 'font-medium text-lg dark:text-light')} {...props}>
     {children}
   </h6>
 );

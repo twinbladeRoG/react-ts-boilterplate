@@ -7,6 +7,7 @@ import AccordionPage from './AccordionPage';
 import BadgePage from './BadgePage';
 import BreadcrumbPage from './BreadcrumbPage';
 import ButtonPage from './ButtonPage';
+import CardPage from './CardPage';
 
 const Home = () => {
   const { mode, toggleMode } = React.useContext(ThemeContext);
@@ -34,6 +35,7 @@ const Home = () => {
           <Route exact path="/components/badge" component={BadgePage} />
           <Route exact path="/components/breadcrumb" component={BreadcrumbPage} />
           <Route exact path="/components/button" component={ButtonPage} />
+          <Route exact path="/components/card" component={CardPage} />
           <Route path="/using-headless" component={UsingHeadless} />
         </Switch>
       </div>
