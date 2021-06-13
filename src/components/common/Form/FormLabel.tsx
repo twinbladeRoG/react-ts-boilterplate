@@ -19,7 +19,7 @@ const FormLabel: FormLabelComponent = React.forwardRef<HTMLLabelElement, FormLab
         ref={ref}
         {...props}
         htmlFor={htmlFor || controlId}
-        className={classNames(className, 'inline-block mb-2')}
+        className={classNames('font-medium dark:text-light', className)}
       >
         {children}
       </label>

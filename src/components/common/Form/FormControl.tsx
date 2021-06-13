@@ -29,11 +29,14 @@ const FormControl = React.forwardRef(
         className={classNames(
           className,
           'form-control',
-          'block w-full rounded-lg px-3 py-1',
+          'block w-full rounded-lg px-3 py-1 transition-colors',
           'focus:outline-none focus:ring-2',
-          plaintext ? 'border-0' : 'border',
-          isInvalid && 'ring-red-400 border-red-400',
-          isValid && 'ring-green-400 border-green-400',
+          'bg-light dark:bg-dark dark:text-light',
+          'focus:bg-light-light dark:focus:bg-dark-light',
+          plaintext ? 'border-0' : '',
+          isValid || isInvalid ? 'ring-2 border-2' : 'border',
+          isInvalid && 'ring-danger border-danger',
+          isValid && 'ring-success border-succring-success',
         )}
       />
     );

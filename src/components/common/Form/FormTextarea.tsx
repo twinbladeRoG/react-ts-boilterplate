@@ -2,28 +2,29 @@ import classNames from 'classnames';
 import React from 'react';
 import FormContext from './FormContext';
 
-interface FormSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface FormTextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   isValid?: boolean;
   isInvalid?: boolean;
   plaintext?: boolean;
 }
 
-type FormSelectComponent = React.ForwardRefExoticComponent<
-  React.RefAttributes<HTMLSelectElement> & FormSelectProps
+export type FormTextareaComponent = React.ForwardRefExoticComponent<
+  React.RefAttributes<HTMLTextAreaElement> & FormTextareaProps
 >;
 
-const FormSelect: FormSelectComponent = React.forwardRef(
-  ({ className, id, isValid, isInvalid, plaintext, ...props }, ref) => {
+const FormTextarea: FormTextareaComponent = React.forwardRef(
+  ({ id, className, isValid, isInvalid, plaintext, ...props }, ref) => {
     const { controlId } = React.useContext(FormContext);
 
     return (
-      <select
+      <textarea
         {...props}
         ref={ref}
         id={id || controlId}
         className={classNames(
           className,
-          'block bg-white w-full rounded-lg px-3 py-1 transition',
+          'form-control',
+          'block w-full rounded-lg px-3 py-1 transition-colors',
           'focus:outline-none focus:ring-2',
           'bg-light dark:bg-dark dark:text-light',
           'focus:bg-light-light dark:focus:bg-dark-light',
@@ -37,4 +38,4 @@ const FormSelect: FormSelectComponent = React.forwardRef(
   },
 );
 
-export default FormSelect;
+export default FormTextarea;

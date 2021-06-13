@@ -18,9 +18,9 @@ const FormControlFeedback: FormControlFeedbackComponent = React.forwardRef<
     ref={ref}
     className={classNames(
       className,
-      'text-sm',
-      type === 'valid' && 'text-green-400',
-      type === 'invalid' && 'text-red-400',
+      'text-sm mt-1',
+      type === 'valid' && 'text-success',
+      type === 'invalid' && 'text-danger',
     )}
   >
     {children}

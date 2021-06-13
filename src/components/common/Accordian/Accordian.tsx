@@ -4,17 +4,25 @@ import AccordianCollapse from './AccordianCollapse';
 import AccordianContext from './AccordianContext';
 import AccordianToggle from './AccordianToggle';
 
-type AccordianProps = React.FC<{
+export interface AccordionProps {
   defaultKey: string;
   className?: string;
   multiple?: boolean;
   scrollOnOpen?: boolean;
-}> & {
+}
+
+type AccordionComponent = React.FC<AccordionProps> & {
   Toggle: typeof AccordianToggle;
   Collapse: typeof AccordianCollapse;
 };
 
-const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, scrollOnOpen }) => {
+const Accordian: AccordionComponent = ({
+  defaultKey,
+  children,
+  className,
+  multiple,
+  scrollOnOpen,
+}) => {
   const [key, setKey] = React.useState<Array<string> | string | null>(null);
 
   const handleKeyChange = (value: string) => {
