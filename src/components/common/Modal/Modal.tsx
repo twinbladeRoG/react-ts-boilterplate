@@ -8,13 +8,15 @@ import ModalContext from './ModalContext';
 import ModalFooter from './ModalFooter';
 import ModalHeader from './ModalHeader';
 
-type ModalProps = React.FC<{
+export interface ModalProps {
   show: boolean;
   onClose?(): void;
   centered?: boolean;
   scrollable?: boolean;
   disbaledBackdropPress?: boolean;
-}> & {
+}
+
+type ModalComponent = React.FC<ModalProps> & {
   Body: typeof ModalBody;
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
@@ -29,7 +31,7 @@ const fadeStyles: { [key: string]: string } = {
   [EXITED]: 'exit',
 };
 
-const Modal: ModalProps = ({
+const Modal: ModalComponent = ({
   show,
   centered,
   children,
