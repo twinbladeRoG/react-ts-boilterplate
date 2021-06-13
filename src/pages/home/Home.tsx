@@ -11,6 +11,7 @@ import CardPage from './CardPage';
 import CarouselPage from './CarouselPage';
 import DropdownPage from './DropdownPage';
 import FormPage from './FormPage';
+import InputGroupPage from './InputGroupPage';
 
 const Home = () => {
   const { mode, toggleMode } = React.useContext(ThemeContext);
@@ -42,6 +43,7 @@ const Home = () => {
           <Route exact path="/components/carousel" component={CarouselPage} />
           <Route exact path="/components/dropdown" component={DropdownPage} />
           <Route exact path="/components/form" component={FormPage} />
+          <Route exact path="/components/inputgroup" component={InputGroupPage} />
           <Route path="/using-headless" component={UsingHeadless} />
         </Switch>
       </div>

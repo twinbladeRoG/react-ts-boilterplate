@@ -23,7 +23,7 @@ const FormSelect: FormSelectComponent = React.forwardRef(
         id={id || controlId}
         className={classNames(
           className,
-          'block bg-white w-full rounded-lg px-3 py-1 transition',
+          'block bg-white w-full rounded px-4 py-2 transition',
           'focus:outline-none focus:ring-2',
           'bg-light dark:bg-dark dark:text-light',
           'focus:bg-light-light dark:focus:bg-dark-light',

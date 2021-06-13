@@ -29,7 +29,7 @@ const FormControl = React.forwardRef(
         className={classNames(
           className,
           'form-control',
-          'block w-full rounded-lg px-3 py-1 transition-colors',
+          'block w-full rounded px-4 py-2 transition-colors',
           'focus:outline-none focus:ring-2',
           'bg-light dark:bg-dark dark:text-light',
           'focus:bg-light-light dark:focus:bg-dark-light',

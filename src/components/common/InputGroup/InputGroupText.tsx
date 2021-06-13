@@ -4,7 +4,10 @@ import React from 'react';
 interface InputGroupTextProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
 const InputGroupText: React.FC<InputGroupTextProps> = ({ className, children, ...props }) => (
-  <span className={classNames(className, 'flex items-center font-medium px-3')} {...props}>
+  <span
+    className={classNames(className, 'input-group-text flex items-center font-medium px-3')}
+    {...props}
+  >
     {children}
   </span>
 );
