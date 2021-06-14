@@ -139,7 +139,7 @@ const ModalPage = () => {
         </Modal.Footer>
       </Modal>
 
-      <Modal show={modal === MODALS.DISABLE_BACKDROP} onClose={closeModal} centered>
+      <Modal show={modal === MODALS.DISABLE_BACKDROP} onClose={closeModal} disbaledBackdropPress>
         <Modal.Header closeButton>Modal Title</Modal.Header>
         <Modal.Body>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora quibusdam
