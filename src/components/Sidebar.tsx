@@ -16,7 +16,7 @@ const routes = [
   { id: uuid(), name: 'Modal', path: '/components/modal' },
   { id: uuid(), name: 'Navbar', path: '/components/navbar' },
   { id: uuid(), name: 'Spinner', path: '/components/spinner' },
-  { id: uuid(), name: 'Tab', path: '/components/tabs' },
+  { id: uuid(), name: 'Tab', path: '/components/tab' },
   { id: uuid(), name: 'Table', path: '/components/table' },
   { id: uuid(), name: 'Tooltip', path: '/components/tooltips' },
   { id: uuid(), name: 'Sidebars / OffCanvas', path: '/components/sidebar' },
