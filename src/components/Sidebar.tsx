@@ -15,7 +15,7 @@ const routes = [
   { id: uuid(), name: 'InputGroup', path: '/components/inputgroup' },
   { id: uuid(), name: 'Modal', path: '/components/modal' },
   { id: uuid(), name: 'Navbar', path: '/components/navbar' },
-  { id: uuid(), name: 'spinner', path: '/components/spinner' },
+  { id: uuid(), name: 'Spinner', path: '/components/spinner' },
   { id: uuid(), name: 'Tab', path: '/components/tabs' },
   { id: uuid(), name: 'Table', path: '/components/table' },
   { id: uuid(), name: 'Tooltip', path: '/components/tooltips' },

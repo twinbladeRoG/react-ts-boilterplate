@@ -1,13 +1,15 @@
 import classNames from 'classnames';
 import React from 'react';
+import { ColorVariant } from '../../../types';
 
 interface SpinnerProps extends React.SVGProps<SVGElement> {
   size?: number;
+  variant?: ColorVariant;
 }
 
-const Spinner: React.FC<SpinnerProps> = ({ size, className }) => (
+const Spinner: React.FC<SpinnerProps> = ({ size, className, variant }) => (
   <svg
-    className={classNames(className, 'animate-spin inline-block')}
+    className={classNames(className, 'animate-spin inline-block', `text-${variant}`)}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     style={{ width: `${size}px`, height: `${size}px` }}
@@ -24,6 +26,7 @@ const Spinner: React.FC<SpinnerProps> = ({ size, className }) => (
 
 Spinner.defaultProps = {
   size: 16,
+  variant: 'primary',
 };
 
 export default Spinner;

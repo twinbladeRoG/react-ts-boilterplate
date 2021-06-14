@@ -14,6 +14,7 @@ import FormPage from './FormPage';
 import InputGroupPage from './InputGroupPage';
 import ModalPage from './ModalPage';
 import NavbarPage from './NavbarPage';
+import SpinnerPage from './SpinnerPage';
 
 const Home = () => {
   const { mode, toggleMode } = React.useContext(ThemeContext);
@@ -48,6 +49,7 @@ const Home = () => {
           <Route exact path="/components/inputgroup" component={InputGroupPage} />
           <Route exact path="/components/modal" component={ModalPage} />
           <Route exact path="/components/navbar" component={NavbarPage} />
+          <Route exact path="/components/spinner" component={SpinnerPage} />
           <Route path="/using-headless" component={UsingHeadless} />
         </Switch>
       </div>
