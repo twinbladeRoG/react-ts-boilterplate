@@ -21,8 +21,10 @@ const Table: React.FC<TableProps> = ({
     <table
       className={classNames(
         className,
+        'w-full',
         bordered && 'table-bordered',
         borderless && 'table-borderless',
+        hover && 'table-hoverable',
       )}
       {...props}
     >
