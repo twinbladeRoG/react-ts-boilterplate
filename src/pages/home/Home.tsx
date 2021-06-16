@@ -17,6 +17,7 @@ import NavbarPage from './NavbarPage';
 import SpinnerPage from './SpinnerPage';
 import TablePage from './TablePage';
 import TabPage from './TabPage';
+import TooltipPage from './TooltipPage';
 
 const Home = () => {
   const { mode, toggleMode } = React.useContext(ThemeContext);
@@ -24,7 +25,7 @@ const Home = () => {
   return (
     <main className="flex transition-colors bg-light-light dark:bg-dark min-h-screen">
       <Sidebar className="w-80" />
-      <div className="overflow-auto p-5">
+      <div className="overflow-auto p-5 w-full">
         <nav className="bg-primary p-5 rounded-3xl mb-5 shadow-xl flex items-center justify-between">
           <Link to="/" className="font-bold text-xl text-light dark:text-dark-light">
             React + Tailwind Starter Pack
@@ -54,6 +55,7 @@ const Home = () => {
           <Route exact path="/components/spinner" component={SpinnerPage} />
           <Route exact path="/components/tab" component={TabPage} />
           <Route exact path="/components/table" component={TablePage} />
+          <Route exact path="/components/tooltip" component={TooltipPage} />
           <Route path="/using-headless" component={UsingHeadless} />
         </Switch>
       </div>

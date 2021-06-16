@@ -18,7 +18,7 @@ const routes = [
   { id: uuid(), name: 'Spinner', path: '/components/spinner' },
   { id: uuid(), name: 'Tab', path: '/components/tab' },
   { id: uuid(), name: 'Table', path: '/components/table' },
-  { id: uuid(), name: 'Tooltip', path: '/components/tooltips' },
+  { id: uuid(), name: 'Tooltip', path: '/components/tooltip' },
   { id: uuid(), name: 'Sidebars / OffCanvas', path: '/components/sidebar' },
   { id: uuid(), name: 'Using Headless UI', path: '/using-headless' },
 ];
