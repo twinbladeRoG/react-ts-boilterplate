@@ -7,4 +7,8 @@ const CardImage: React.FC<CardImageProps> = ({ className, alt, ...props }) => (
   <img {...props} alt={alt} className={classNames(className, 'w-full object-cover rounded-t-lg')} />
 );
 
+CardImage.defaultProps = {
+  alt: '',
+};
+
 export default CardImage;

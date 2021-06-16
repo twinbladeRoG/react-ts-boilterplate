@@ -1,7 +1,6 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import ThemeContext from './components/common/ThemeContext';
-import NavBar from './components/NavBar';
 import './index.css';
 import Routes from './Routes';
 
@@ -33,7 +32,6 @@ const App = () => {
   return (
     <>
       <ThemeContext.Provider value={{ mode, toggleMode }}>
-        <NavBar />
         <Routes />
       </ThemeContext.Provider>
       <ToastContainer />

@@ -6,7 +6,7 @@ const FormText: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   children,
   ...props
 }) => (
-  <small className={classNames(className, 'text-gray-700')} {...props}>
+  <small className={classNames(className, 'form-text px-4 py-2')} {...props}>
     {children}
   </small>
 );

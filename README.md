@@ -9,7 +9,7 @@
  - [x] Tailwind CSS Components
  - [x] Dark Mode
  - [x] Storybook
- - [ ] Headless UI Integration
+ - [x] Headless UI Integration
  - [ ] React Table
  - [ ] React Hook Form
  - [ ] React Query + Fetch API
@@ -26,7 +26,7 @@
  - [React Table](https://react-table.tanstack.com/docs/overview)
  - [React Transition Group](https://reactcommunity.org/react-transition-group/)
  - [React Spinners](https://loading.io/css/)
- - [React tooltop](https://wwayne.github.io/react-tooltip/)
+ - [React tooltip](https://wwayne.github.io/react-tooltip/)
 
 ## React Components
  - [x] Accordian
@@ -76,6 +76,8 @@
 
 1. Tailwind CSS classes do not work right out of the box with Storybook.
 
-> As Tailwind CSS used post-css and autoprefixer to build which we manually configure using craco. Same needs to be done for Storybook to be able to use tailwind css.
+> As Tailwind CSS uses post-css and autoprefixer to build which we manually configure using craco. Same needs to be done for Storybook to be able to use tailwind css.
 >
 > We need to modify the webpack config in `.storybook/main.js`, then import our css files in `./storybook/preview.js`.
+
+2. Current Headless UI has less props for customization as in v1. Check for future releases

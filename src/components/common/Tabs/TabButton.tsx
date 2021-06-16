@@ -24,9 +24,9 @@ const TabButton: TabButtonComponent = React.forwardRef(
         className={classNames(
           className,
           key === eventKey
-            ? 'font-bold border-blue-500 bg-gray-100 rounded-t-md'
-            : 'border-transparent',
-          'px-4 py-2 border-b-4',
+            ? 'font-bold border-primary rounded-t-md text-primary'
+            : 'border-transparent dark:text-light',
+          'transition-colors px-4 py-2 border-b-4',
         )}
         onClick={handleOnClick}
         {...props}

@@ -1,19 +1,28 @@
+import classNames from 'classnames';
 import React from 'react';
 import AccordianCollapse from './AccordianCollapse';
 import AccordianContext from './AccordianContext';
 import AccordianToggle from './AccordianToggle';
 
-type AccordianProps = React.FC<{
+export interface AccordionProps {
   defaultKey: string;
   className?: string;
   multiple?: boolean;
   scrollOnOpen?: boolean;
-}> & {
+}
+
+type AccordionComponent = React.FC<AccordionProps> & {
   Toggle: typeof AccordianToggle;
   Collapse: typeof AccordianCollapse;
 };
 
-const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, scrollOnOpen }) => {
+const Accordian: AccordionComponent = ({
+  defaultKey,
+  children,
+  className,
+  multiple,
+  scrollOnOpen,
+}) => {
   const [key, setKey] = React.useState<Array<string> | string | null>(null);
 
   const handleKeyChange = (value: string) => {
@@ -25,6 +34,8 @@ const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, 
           setKey([...key, value]);
         }
       }
+    } else if (value === key) {
+      setKey(null);
     } else {
       setKey(value);
     }
@@ -41,7 +52,11 @@ const Accordian: AccordianProps = ({ defaultKey, children, className, multiple, 
         scrollOnOpen: Boolean(scrollOnOpen),
       }}
     >
-      <div className={className}>{children}</div>
+      <div
+        className={classNames(className, 'bg-white dark:bg-dark-dark rounded-xl overflow-hidden')}
+      >
+        {children}
+      </div>
     </AccordianContext.Provider>
   );
 };

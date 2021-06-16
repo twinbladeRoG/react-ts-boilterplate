@@ -1,13 +1,16 @@
 import classNames from 'classnames';
 import React from 'react';
+import { ColorVariant } from '../../../types';
 import DropdownContext from './DropdownContext';
 
-interface DropdownProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+interface DropdownProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ColorVariant;
+}
 
 const DropdownItem: React.FC<DropdownProps> = ({
+  variant,
   className,
   children,
-  type,
   onClick,
   ...props
 }) => {
@@ -22,11 +25,11 @@ const DropdownItem: React.FC<DropdownProps> = ({
 
   return (
     <button
-      type={type === 'reset' ? 'reset' : type === 'submit' ? 'submit' : 'button'}
+      type="button"
       className={classNames(
         className,
-        'px-5 py-3 block w-full transition-colors',
-        'hover:bg-blue-400 focus:bg-blue-500 hover:text-white focus:text-white',
+        'px-5 py-3 block w-full transition-colors dark:text-light',
+        `hover:bg-${variant} focus:bg-${variant} hover:bg-opacity-50 hover:text-${variant}-dark dark:hover:text-${variant}-dark`,
       )}
       onClick={handleClick}
       {...props}
@@ -38,6 +41,7 @@ const DropdownItem: React.FC<DropdownProps> = ({
 
 DropdownItem.defaultProps = {
   type: 'button',
+  variant: 'primary',
 };
 
 export default DropdownItem;

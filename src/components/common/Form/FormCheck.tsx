@@ -16,7 +16,7 @@ const FormCheck: FormCheckComponent = React.forwardRef(
   ({ className, type, label, inline, id, ...props }, ref) => (
     <div className={classNames(inline ? 'inline-block' : 'block')}>
       <input className={classNames(className)} type={type} ref={ref} id={id} {...props} />
-      <label className={classNames('mx-2 cursor-pointer')} htmlFor={id}>
+      <label className={classNames('mx-2 cursor-pointer dark:text-white')} htmlFor={id}>
         {label}
       </label>
     </div>

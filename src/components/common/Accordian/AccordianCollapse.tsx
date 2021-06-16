@@ -47,7 +47,7 @@ const AccordianCollapse: React.FC<AccordianCollapseProps> = ({ children, classNa
   const scroll = () => {
     if (checkIfOpened() && scrollOnOpen) {
       window.scrollTo({
-        top: (divRef.current?.scrollHeight ?? 0) + 100,
+        top: window.scrollY + (divRef.current?.scrollHeight ?? 0),
         left: 0,
         behavior: 'smooth',
       });
@@ -64,7 +64,7 @@ const AccordianCollapse: React.FC<AccordianCollapseProps> = ({ children, classNa
             ...getTransitionStyle(state, divRef.current?.scrollHeight),
           }}
         >
-          <div className={classNames(className, 'bg-white border p-7')}>{children}</div>
+          <div className={classNames(className, 'p-7')}>{children}</div>
         </div>
       )}
     </Transition>

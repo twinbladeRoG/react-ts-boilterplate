@@ -6,8 +6,9 @@ import FormGroup from './FormGroup';
 import FormLabel from './FormLabel';
 import FormSelect from './FormSelect';
 import FormText from './FormText';
+import FormTextarea from './FormTextarea';
 
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
+export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 
 type FormComponent = React.ForwardRefExoticComponent<
   React.RefAttributes<HTMLFormElement> & FormProps
@@ -19,6 +20,7 @@ type FormComponent = React.ForwardRefExoticComponent<
   Check: typeof FormCheck;
   Select: typeof FormSelect;
   File: typeof FormFile;
+  Textarea: typeof FormTextarea;
 };
 
 const Form = React.forwardRef<HTMLFormElement, FormProps>(
@@ -36,5 +38,6 @@ Form.Text = FormText;
 Form.Check = FormCheck;
 Form.Select = FormSelect;
 Form.File = FormFile;
+Form.Textarea = FormTextarea;
 
 export default Form;

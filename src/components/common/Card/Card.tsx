@@ -15,7 +15,13 @@ export type CardComponent = React.FC<CardProps> & {
 };
 
 const Card: CardComponent = ({ className, children, ...props }) => (
-  <div {...props} className={classNames(className, 'bg-white border shadow-lg rounded-lg')}>
+  <div
+    {...props}
+    className={classNames(
+      className,
+      'transition-colors bg-white dark:bg-dark-light shadow-lg rounded-lg',
+    )}
+  >
     {children}
   </div>
 );

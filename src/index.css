@@ -149,44 +149,8 @@ a {
   top: 0;
 }
 
-.slick-arrow {
-  z-index: 5;
-}
-
-.slick-next {
-  right: 25px;
-}
-
-.slick-prev {
-  left: 25px
-}
-
-.slick-prev,
-.slick-next {
-  width: 40px;
-  height: 40px;
-}
-
-.slick-prev::before,
-.slick-next::before {
-  font-size: 40px;
-}
-
-.slick-dots {
-  bottom: 25px;
-}
-
-.slick-dots li button::before {
-  background-color: #fff;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  color: white;
-  transition: opacity 0.1s ease-in-out;
-}
-
-.slick-dots li.slick-active button::before {
-  background-color: #000;
-  color: black;
+.carousel-dots li.slick-active button {
+  @apply bg-primary opacity-100;
 }
 
 table {
@@ -194,7 +158,7 @@ table {
 }
 
 thead {
-  @apply bg-gray-100;
+  @apply bg-light dark:bg-dark-dark;
 }
 
 th {
@@ -202,7 +166,7 @@ th {
 }
 
 tbody {
-  @apply bg-white divide-y divide-gray-200;
+  @apply bg-white dark:bg-dark-light divide-y divide-gray-200;
 }
 
 td {
@@ -229,51 +193,12 @@ table.table-borderless tbody {
   @apply divide-y-0;
 }
 
+table.table-hoverable tbody tr:hover {
+  @apply hover:bg-light-dark transition-colors;
+}
+
 .nav-item {
   @apply w-full bg-gray-900;
-}
-
-/* Spinners */
-.spinner-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.spinner-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #ff0;
-  border-radius: 50%;
-  animation: spinner-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #ff0 transparent transparent transparent;
-}
-
-.spinner-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.spinner-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.spinner-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes spinner-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /* InputGroup */
@@ -298,6 +223,19 @@ table.table-borderless tbody {
   border-bottom-right-radius: 0;
   position: relative;
   z-index: 2;
+}
+
+.input-group .input-group-prepend .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group .input-group-prepend .input-group-text:first-child {
+  @apply rounded-tl rounded-bl;
+}
+
+.input-group .input-group-append .input-group-text:last-child {
+  @apply rounded-tr rounded-br;
 }
 
 .input-group .input-group-append .btn:not(:first-child) {

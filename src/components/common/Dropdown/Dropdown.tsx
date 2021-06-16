@@ -1,11 +1,11 @@
 import { Placement } from '@popperjs/core';
-import classNames from 'classnames';
 import React from 'react';
 import { usePopper } from 'react-popper';
-import Button from '../Button';
 import DropdownContext from './DropdownContext';
 import DropdownHeader from './DropdownHeader';
 import DropdownItem from './DropdownItem';
+import DropdownMenu from './DropdownMenu';
+import DropdownToggle from './DropdownToggle';
 
 interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: 'left' | 'middle' | 'right';
@@ -15,6 +15,8 @@ interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
 type DropdownComponent = React.FC<DropdownProps> & {
   Header: typeof DropdownHeader;
   Item: typeof DropdownItem;
+  Toggle: typeof DropdownToggle;
+  Menu: typeof DropdownMenu;
 };
 
 function useGetLatest<T>(value: T) {
@@ -24,7 +26,7 @@ function useGetLatest<T>(value: T) {
   return React.useCallback(() => ref.current, []);
 }
 
-const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
+const Dropdown: DropdownComponent = ({ align, drop, children }) => {
   const [referenceElement, setReferenceElement] = React.useState<HTMLElement | null>(null);
   const [popperElement, setPopperElement] = React.useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = React.useState<HTMLElement | null>(null);
@@ -81,6 +83,7 @@ const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
     const { open } = getLatest();
     if (!open) setVisible(true);
   }, [getLatest]);
+
   const handleClose = React.useCallback(() => {
     const { open } = getLatest();
     if (open) setVisible(false);
@@ -120,35 +123,25 @@ const Dropdown: DropdownComponent = ({ align, drop, children, className }) => {
   }, [popperElement]);
 
   return (
-    <DropdownContext.Provider value={{ onToggle: toggle }}>
-      <>
-        <Button
-          type="button"
-          ref={setReferenceElement}
-          onClick={toggle}
-          className={classNames(className)}
-        >
-          Reference element
-        </Button>
-
-        <div
-          ref={setPopperElement}
-          style={styles.popper}
-          className={classNames(
-            'popper-container py-3 bg-white shadow-xl rounded-lg border',
-            visible ? '' : 'invisible pointer-events-none',
-          )}
-          {...attributes.popper}
-        >
-          {children}
-          <div ref={setArrowElement} style={styles.arrow} className="popper-arrow" />
-        </div>
-      </>
+    <DropdownContext.Provider
+      value={{
+        visible: getLatest().open,
+        onToggle: toggle,
+        setReferenceElement,
+        setPopperElement,
+        setArrowElement,
+        styles,
+        attributes,
+      }}
+    >
+      <div>{children}</div>
     </DropdownContext.Provider>
   );
 };
 
 Dropdown.Header = DropdownHeader;
 Dropdown.Item = DropdownItem;
+Dropdown.Toggle = DropdownToggle;
+Dropdown.Menu = DropdownMenu;
 
 export default Dropdown;
