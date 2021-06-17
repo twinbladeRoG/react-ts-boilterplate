@@ -8,7 +8,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   buttonStyle?: 'default' | 'outline' | 'plain';
   variant?: ColorVariant;
   loadingText?: string;
-  size?: 'sm' | 'lg';
+  size?: 'sm' | 'lg' | 'md';
 }
 
 export type ButtonComponent = React.ForwardRefExoticComponent<
@@ -76,7 +76,7 @@ const Button: ButtonComponent = React.forwardRef(
       >
         {isLoading ? (
           <>
-            <Spinner />
+            <Spinner variant={buttonStyle !== 'default' ? variant : 'light'} />
             {loadingText ? <span className="ml-3">{loadingText}</span> : null}
           </>
         ) : (
@@ -91,6 +91,7 @@ Button.defaultProps = {
   isLoading: false,
   variant: 'primary',
   buttonStyle: 'default',
+  size: 'md',
 };
 
 Button.displayName = 'Button';

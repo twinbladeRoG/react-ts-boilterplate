@@ -38,6 +38,10 @@ const Dot = () => (
   </button>
 );
 
+export interface CarouselProps extends Settings {
+  children?: React.ReactNode;
+}
+
 const Carousel: React.FC<Settings> = ({ children, ...props }) => (
   <Slider
     prevArrow={<CarouselPrevArrow />}

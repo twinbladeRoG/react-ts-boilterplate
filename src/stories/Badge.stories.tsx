@@ -7,16 +7,13 @@ export default {
   title: 'Components/Badge',
   component: Badge,
   argTypes: {
-    color: {
-      description: 'Color variant of the badge',
-      defaultValue: 'blue-400',
-      options: ['blue-400', 'red-400', 'yellow-400', 'gray-400'],
+    variant: {
+      options: ['primary', 'accent', 'warning', 'success', 'danger', 'light', 'dark'],
       control: { type: 'radio' },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'Hello' },
-      },
-      type: { name: 'string' },
+    },
+    variantType: {
+      options: ['light', 'default', 'dark'],
+      control: 'radio',
     },
     pill: { control: 'boolean' },
   },

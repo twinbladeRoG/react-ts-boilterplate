@@ -2,7 +2,9 @@ import classNames from 'classnames';
 import React from 'react';
 import BreadcrumbItem from './BreadcrumbItem';
 
-type BreadcrumbType = React.FC<React.HTMLAttributes<HTMLDivElement>> & {
+export interface BreadcrumbProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+export type BreadcrumbType = React.FC<BreadcrumbProps> & {
   Item: typeof BreadcrumbItem;
 };
 

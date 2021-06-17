@@ -7,7 +7,7 @@ import DropdownItem from './DropdownItem';
 import DropdownMenu from './DropdownMenu';
 import DropdownToggle from './DropdownToggle';
 
-interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: 'left' | 'middle' | 'right';
   drop?: 'up' | 'left' | 'right' | 'down';
 }

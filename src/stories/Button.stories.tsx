@@ -1,6 +1,4 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
-
 import Button, { ButtonProps } from '../components/common/Button';
 
 export default {
@@ -8,18 +6,25 @@ export default {
   component: Button,
   argTypes: {
     isLoading: { control: 'boolean' },
-    color: {
-      options: ['blue-400', 'red-400', 'yellow-400', 'gray-400'],
+    buttonStyle: {
+      options: ['default', 'outline', 'plain'],
       control: { type: 'radio' },
-      description: 'Color variant of the badge',
+      description: 'Button styles',
       table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'blue-400' },
+        defaultValue: { summary: 'default' },
       },
     },
     variant: {
-      options: ['primary', 'secondary', 'outline', 'rounded'],
+      options: ['primary', 'accent', 'warning', 'success', 'danger', 'light', 'dark'],
       control: { type: 'radio' },
+    },
+    size: {
+      options: ['sm', 'lg', 'md'],
+      control: { type: 'radio' },
+    },
+    loadingText: {
+      control: 'text',
     },
   },
 } as Meta;
