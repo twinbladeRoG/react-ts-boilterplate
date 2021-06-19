@@ -4,9 +4,9 @@ import InputGroupAppend from './InputGroupAppend';
 import InputGroupPrepend from './InputGroupPrepend';
 import InputGroupText from './InputGroupText';
 
-interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-type InputGroupComponent = React.FC<InputGroupProps> & {
+export type InputGroupComponent = React.FC<InputGroupProps> & {
   Prepend: typeof InputGroupPrepend;
   Append: typeof InputGroupAppend;
   Text: typeof InputGroupText;
