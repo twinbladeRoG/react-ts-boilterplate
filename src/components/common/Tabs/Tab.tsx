@@ -3,11 +3,11 @@ import TabButton from './TabButton';
 import TabContext from './TabContext';
 import TabPane from './TabPane';
 
-interface TabProps {
+export interface TabProps {
   activeKey: string | number;
 }
 
-type TabComponent = React.ElementType<TabProps> & {
+export type TabComponent = React.ElementType<TabProps> & {
   Button: typeof TabButton;
   Pane: typeof TabPane;
 };
