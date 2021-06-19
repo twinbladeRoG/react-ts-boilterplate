@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
+export interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   responsive?: boolean;
   bordered?: boolean;
   borderless?: boolean;
