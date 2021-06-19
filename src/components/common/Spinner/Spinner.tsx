@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { ColorVariant } from '../../../types';
 
-interface SpinnerProps extends React.SVGProps<SVGElement> {
+export interface SpinnerProps extends React.SVGProps<SVGElement> {
   size?: number;
   variant?: ColorVariant;
 }
