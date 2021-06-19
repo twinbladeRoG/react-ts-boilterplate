@@ -2,13 +2,13 @@ import classNames from 'classnames';
 import React from 'react';
 import FormContext from './FormContext';
 
-interface FormSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface FormSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   isValid?: boolean;
   isInvalid?: boolean;
   plaintext?: boolean;
 }
 
-type FormSelectComponent = React.ForwardRefExoticComponent<
+export type FormSelectComponent = React.ForwardRefExoticComponent<
   React.RefAttributes<HTMLSelectElement> & FormSelectProps
 >;
 
@@ -36,5 +36,7 @@ const FormSelect: FormSelectComponent = React.forwardRef(
     );
   },
 );
+
+FormSelect.displayName = 'Form.Select';
 
 export default FormSelect;

@@ -3,13 +3,13 @@ import React from 'react';
 import FormContext from './FormContext';
 import FormControlFeedback from './FormControlFeedback';
 
-interface FormControlProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface FormControlProps extends React.InputHTMLAttributes<HTMLInputElement> {
   isValid?: boolean;
   isInvalid?: boolean;
   plaintext?: boolean;
 }
 
-type FormControlComponent = React.ForwardRefExoticComponent<
+export type FormControlComponent = React.ForwardRefExoticComponent<
   React.RefAttributes<HTMLInputElement> & FormControlProps
 > & {
   Feedback: typeof FormControlFeedback;
@@ -44,5 +44,6 @@ const FormControl = React.forwardRef(
 ) as FormControlComponent;
 
 FormControl.Feedback = FormControlFeedback;
+FormControl.displayName = 'Form.Control';
 
 export default FormControl;

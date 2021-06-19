@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import React from 'react';
 
-interface FormCheckProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface FormCheckProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type: 'checkbox' | 'radio';
   inline?: boolean;
   label?: React.ReactNode;
   id: string;
 }
 
-type FormCheckComponent = React.ForwardRefExoticComponent<
+export type FormCheckComponent = React.ForwardRefExoticComponent<
   React.RefAttributes<HTMLInputElement> & FormCheckProps
 >;
 
@@ -23,4 +23,8 @@ const FormCheck: FormCheckComponent = React.forwardRef(
   ),
 );
 
+FormCheck.defaultProps = {
+  type: 'checkbox',
+};
+FormCheck.displayName = 'FormCheck';
 export default FormCheck;

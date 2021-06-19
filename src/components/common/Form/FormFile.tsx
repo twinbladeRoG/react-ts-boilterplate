@@ -5,13 +5,13 @@ import classNames from 'classnames';
 import React from 'react';
 import FormContext from './FormContext';
 
-interface FormFileProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface FormFileProps extends React.InputHTMLAttributes<HTMLInputElement> {
   isValid?: boolean;
   isInvalid?: boolean;
   labelIcon?: IconProp;
 }
 
-type FormFileComponent = React.ForwardRefExoticComponent<
+export type FormFileComponent = React.ForwardRefExoticComponent<
   React.RefAttributes<HTMLInputElement> & FormFileProps
 >;
 
@@ -93,5 +93,7 @@ const FormFile: FormFileComponent = React.forwardRef(
     );
   },
 );
+
+FormFile.displayName = 'Form.File';
 
 export default FormFile;
