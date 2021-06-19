@@ -10,9 +10,9 @@ import NavbarLink from './NavbarLink';
 import NavbarMenu from './NavbarMenu';
 import NavbarNavigation from './NavbarNavigation';
 
-interface NavbarProps extends React.HTMLAttributes<HTMLElement> {}
+export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {}
 
-type NavbarComponent = React.FC<NavbarProps> & {
+export type NavbarComponent = React.FC<NavbarProps> & {
   Brand: typeof NavbarBrand;
   Navigation: typeof NavbarNavigation;
   Collapse: typeof NavbarCollapse;
