@@ -4,10 +4,15 @@ import { ColorVariant } from '../../types';
 import Spinner from './Spinner/Spinner';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Check if button is in loading state */
   isLoading?: boolean;
+  /** Set the style of the button, can be 'default', 'outline', 'plain' */
   buttonStyle?: 'default' | 'outline' | 'plain';
+  /** Choose color variant for the button */
   variant?: ColorVariant;
+  /** Text to show when button is in loading state */
   loadingText?: string;
+  /** Set size of the button */
   size?: 'sm' | 'lg' | 'md';
 }
 

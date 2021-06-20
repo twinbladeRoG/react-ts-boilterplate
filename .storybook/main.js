@@ -7,12 +7,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/preset-create-react-app',
   ],
-  typescript: {
-    docgen: 'none',
-    reactDocgenTypescriptOptions: {
-      include: ['src/**/*.tsx'],
-    },
-  },
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\,css&/,

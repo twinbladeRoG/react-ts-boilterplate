@@ -9,11 +9,6 @@ export default {
     buttonStyle: {
       options: ['default', 'outline', 'plain'],
       control: { type: 'radio' },
-      description: 'Button styles',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'default' },
-      },
     },
     variant: {
       options: ['primary', 'accent', 'warning', 'success', 'danger', 'light', 'dark'],
