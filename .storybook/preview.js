@@ -13,4 +13,13 @@ export const parameters = {
       order: ['Introduction', 'Color Palette', 'Typography'],
     },
   },
+  layout: 'fullscreen',
 };
+
+export const decorators = [
+  Story => (
+    <main className="dark:bg-dark min-h-screen p-7">
+      <Story />
+    </main>
+  ),
+];
