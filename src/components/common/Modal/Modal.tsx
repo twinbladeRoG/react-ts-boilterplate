@@ -9,14 +9,29 @@ import ModalFooter from './ModalFooter';
 import ModalHeader from './ModalHeader';
 
 export interface ModalProps {
+  /**
+   * Make modal visible
+   */
   show: boolean;
+  /**
+   * Close modal
+   */
   onClose?(): void;
+  /**
+   * Change modal position center
+   */
   centered?: boolean;
+  /**
+   * Make modal content scrollable
+   */
   scrollable?: boolean;
+  /**
+   * Disable modal backdrop click
+   */
   disbaledBackdropPress?: boolean;
 }
 
-type ModalComponent = React.FC<ModalProps> & {
+export type ModalComponent = React.FC<ModalProps> & {
   Body: typeof ModalBody;
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
@@ -94,6 +109,7 @@ const Modal: ModalComponent = ({
 };
 
 Modal.displayName = 'Modal';
+
 Modal.defaultProps = {
   show: false,
   onClose: () => {},

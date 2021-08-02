@@ -13,12 +13,16 @@ export const parameters = {
       order: ['Introduction', 'Color Palette', 'Typography'],
     },
   },
+  /** To remove default padding storybook canvas */
   layout: 'fullscreen',
 };
 
+/**
+ * Container for implementing tailwind dark mode
+ */
 export const decorators = [
   Story => (
-    <main className="dark:bg-dark min-h-screen p-7">
+    <main className="dark:bg-dark p-7">
       <Story />
     </main>
   ),

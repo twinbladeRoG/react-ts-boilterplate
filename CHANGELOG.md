@@ -14,3 +14,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2021-06-20
 ### Changed
 - Change Typescript to `v4.2.2`
+### Added
+- Tailwind CSS dark mode toggle in Storybook

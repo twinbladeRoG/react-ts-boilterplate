@@ -3,8 +3,17 @@ import React from 'react';
 import { ColorVariant, VariantType } from '../../../types';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /**
+   * Set badge color variant
+   */
   variant?: ColorVariant;
+  /**
+   * Set badge color variant type
+   */
   variantType?: VariantType;
+  /**
+   * Set if want badge to look like a pill
+   */
   pill?: boolean;
 }
 

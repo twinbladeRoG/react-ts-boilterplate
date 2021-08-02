@@ -10,6 +10,7 @@
  - [x] Dark Mode
  - [x] Storybook
  - [x] Headless UI Integration
+ - [ ] Integrate Docasauras
  - [ ] React Table
  - [ ] React Hook Form
  - [ ] React Query + Fetch API

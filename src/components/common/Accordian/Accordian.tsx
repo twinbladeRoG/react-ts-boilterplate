@@ -4,14 +4,18 @@ import AccordianCollapse from './AccordianCollapse';
 import AccordianContext from './AccordianContext';
 import AccordianToggle from './AccordianToggle';
 
-export interface AccordionProps {
+export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Default accordion key to be opened
+   */
   defaultKey: string;
-  className?: string;
+  /** Check if you want to open multiple accordion at same time  */
   multiple?: boolean;
+  /** Check you want to scroll to the opened accordion  */
   scrollOnOpen?: boolean;
 }
 
-type AccordionComponent = React.FC<AccordionProps> & {
+export type AccordionComponent = React.FC<AccordionProps> & {
   Toggle: typeof AccordianToggle;
   Collapse: typeof AccordianCollapse;
 };
@@ -63,10 +67,11 @@ const Accordian: AccordionComponent = ({
 
 Accordian.defaultProps = {
   defaultKey: '',
-  className: '',
   multiple: false,
   scrollOnOpen: false,
 };
+
+Accordian.displayName = 'Accordion';
 
 Accordian.Toggle = AccordianToggle;
 Accordian.Collapse = AccordianCollapse;

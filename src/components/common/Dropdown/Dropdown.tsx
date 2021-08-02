@@ -8,11 +8,17 @@ import DropdownMenu from './DropdownMenu';
 import DropdownToggle from './DropdownToggle';
 
 export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Set dropdown element alignment
+   */
   align?: 'left' | 'middle' | 'right';
+  /**
+   * Set dropdown element position
+   */
   drop?: 'up' | 'left' | 'right' | 'down';
 }
 
-type DropdownComponent = React.FC<DropdownProps> & {
+export type DropdownComponent = React.FC<DropdownProps> & {
   Header: typeof DropdownHeader;
   Item: typeof DropdownItem;
   Toggle: typeof DropdownToggle;
